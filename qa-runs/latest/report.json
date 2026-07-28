@@ -1,0 +1,3634 @@
+{
+  "runId": "20260728-e2e-20260728T1408z",
+  "createdAt": "2026-07-28T14:15:18.640Z",
+  "qaUrl": "https://mohmmadmuneeb.github.io/notifystock/",
+  "publicOrigin": "https://notifystock.com",
+  "passCount": 4,
+  "statuses": {
+    "PASS": 248,
+    "AUTH_REQUIRED": 120,
+    "SKIPPED_MANUAL": 20
+  },
+  "passSummaries": [
+    {
+      "pass": 1,
+      "routeCount": 39,
+      "adminSummary": {
+        "loaded": 0,
+        "authRequired": 30,
+        "failed": 0
+      },
+      "consoleErrors": 1,
+      "pageErrors": 0,
+      "video": "videos/pass-1-step-by-step.webm"
+    },
+    {
+      "pass": 2,
+      "routeCount": 39,
+      "adminSummary": {
+        "loaded": 0,
+        "authRequired": 30,
+        "failed": 0
+      },
+      "consoleErrors": 1,
+      "pageErrors": 0,
+      "video": "videos/pass-2-step-by-step.webm"
+    },
+    {
+      "pass": 3,
+      "routeCount": 39,
+      "adminSummary": {
+        "loaded": 0,
+        "authRequired": 30,
+        "failed": 0
+      },
+      "consoleErrors": 1,
+      "pageErrors": 0,
+      "video": "videos/pass-3-step-by-step.webm"
+    },
+    {
+      "pass": 4,
+      "routeCount": 39,
+      "adminSummary": {
+        "loaded": 0,
+        "authRequired": 30,
+        "failed": 0
+      },
+      "consoleErrors": 1,
+      "pageErrors": 0,
+      "video": "videos/pass-4-step-by-step.webm"
+    }
+  ],
+  "checks": [
+    {
+      "pass": 1,
+      "area": "QA guide",
+      "name": "GitHub Pages QA form loads and is deindexed",
+      "status": "PASS",
+      "details": "16 sections, 71 tasks, 84 links, robots=noindex, nofollow",
+      "evidence": [
+        "screenshots/pass-1-qa-guide-overview.png"
+      ],
+      "at": "2026-07-28T14:08:30.079Z"
+    },
+    {
+      "pass": 1,
+      "area": "QA guide",
+      "name": "Backup GitHub Pages path loads",
+      "status": "PASS",
+      "details": "HTTP 200",
+      "evidence": [],
+      "at": "2026-07-28T14:08:30.256Z"
+    },
+    {
+      "pass": 1,
+      "area": "QA guide",
+      "name": "QA guide is not publicly published on production",
+      "status": "PASS",
+      "details": "production returned HTTP 404",
+      "evidence": [],
+      "at": "2026-07-28T14:08:30.599Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Alerts & Preorder | Capture Shopify Product Demand\"",
+      "evidence": [
+        "screenshots/pass-1-public-home.png"
+      ],
+      "at": "2026-07-28T14:08:31.570Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/back-in-stock/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Back in Stock App for Shopify | NotifyStock\"",
+      "evidence": [
+        "screenshots/pass-1-public-back-in-stock.png"
+      ],
+      "at": "2026-07-28T14:08:40.262Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/brand/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Brand Assets\"",
+      "evidence": [],
+      "at": "2026-07-28T14:08:40.995Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/compare/amp-back-in-stock-alternative/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Amp Back in Stock Alternative | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:08:41.711Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/compare/klaviyo-back-in-stock-alternative/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Klaviyo Back in Stock Alternative for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:08:42.312Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/compare/notify-me-alternative/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Notify Me Alternative for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:08:42.941Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/compare/stoq-alternative/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"STOQ Alternative for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:08:43.594Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/compare/swym-wishlist-alternative/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Swym Wishlist Alternative for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:08:44.221Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/contact/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Book a NotifyStock Demo or Setup Call\"",
+      "evidence": [
+        "screenshots/pass-1-public-contact.png"
+      ],
+      "at": "2026-07-28T14:08:44.887Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/features/customizable-widgets/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Customizable Shopify Storefront Widgets | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:08:45.513Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/features/notifications/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Email, SMS and Push Restock Alerts for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:08:46.138Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/features/product-modes/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Product Modes for Shopify Demand Workflows | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:08:46.778Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/features/reports-and-analytics/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Product Demand Reports and Analytics | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:08:47.404Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/features/templates/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Notification Templates for Shopify Demand Workflows | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:08:48.041Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/integrations/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Integrations for Shopify Alerts\"",
+      "evidence": [],
+      "at": "2026-07-28T14:08:48.684Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/integrations/klaviyo/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Klaviyo Back in Stock Integration | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:08:49.309Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/integrations/mailchimp/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Mailchimp Shopify Restock Alerts | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:08:49.935Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/integrations/onesignal-push/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"OneSignal Push Restock Alerts | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:08:50.599Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/integrations/twilio-sms/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Twilio SMS Restock Alerts for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:08:51.223Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/low-stock/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Low Stock Counter for Shopify | NotifyStock\"",
+      "evidence": [
+        "screenshots/pass-1-public-low-stock.png"
+      ],
+      "at": "2026-07-28T14:08:51.932Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/migration/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Move to NotifyStock | Shopify Demand App Migration\"",
+      "evidence": [],
+      "at": "2026-07-28T14:08:52.570Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/preorder/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"PreOrder App for Shopify | NotifyStock\"",
+      "evidence": [
+        "screenshots/pass-1-public-preorder.png"
+      ],
+      "at": "2026-07-28T14:08:53.278Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/pricing/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Pricing | Free and Paid Shopify Plans\"",
+      "evidence": [
+        "screenshots/pass-1-public-pricing.png"
+      ],
+      "at": "2026-07-28T14:08:53.975Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/privacy/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Privacy Policy\"",
+      "evidence": [],
+      "at": "2026-07-28T14:08:54.592Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/resources/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Guides and Resources\"",
+      "evidence": [],
+      "at": "2026-07-28T14:08:55.201Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/resources/best-shopify-back-in-stock-apps/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Best Shopify Back in Stock Apps | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:08:55.808Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/resources/best-shopify-preorder-apps/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Best Shopify PreOrder Apps | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:08:56.449Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/resources/how-to-add-notify-me-button-shopify/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"How to Add a Notify Me Button on Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:08:57.062Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/resources/shopify-back-in-stock-alerts-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify Restock Alerts Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:08:57.666Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/resources/shopify-inventory-alerts-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify Inventory Alerts Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:08:58.274Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/resources/shopify-low-stock-counter-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify Low Stock Counter Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:08:58.949Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/resources/shopify-preorder-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify PreOrder Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:08:59.586Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/resources/shopify-sms-restock-alerts-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify SMS Restock Alerts Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:09:00.259Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/resources/shopify-waitlist-app-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify Waitlist App Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:09:00.882Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/resources/shopify-wishlist-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify Wishlist Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:09:01.513Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/shopify-theme-setup/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify Theme App Extension Setup | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:09:02.132Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/shopify/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock for Shopify | Product Demand Workflows\"",
+      "evidence": [],
+      "at": "2026-07-28T14:09:02.762Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/terms/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Terms of Service\"",
+      "evidence": [],
+      "at": "2026-07-28T14:09:03.356Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/wishlist/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Wishlist App for Shopify | NotifyStock\"",
+      "evidence": [
+        "screenshots/pass-1-public-wishlist.png"
+      ],
+      "at": "2026-07-28T14:09:04.054Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "Header/footer internal links",
+      "status": "PASS",
+      "details": "39 internal links checked",
+      "evidence": [],
+      "at": "2026-07-28T14:09:07.041Z"
+    },
+    {
+      "pass": 1,
+      "area": "AI assistant",
+      "name": "Public assistant sends and answers desktop",
+      "status": "PASS",
+      "details": "API HTTP 200, answer length 411",
+      "evidence": [
+        "screenshots/pass-1-assistant-answer-desktop.png"
+      ],
+      "at": "2026-07-28T14:09:12.699Z"
+    },
+    {
+      "pass": 1,
+      "area": "AI assistant",
+      "name": "Public assistant close/reopen desktop",
+      "status": "PASS",
+      "details": "panel closed after close button",
+      "evidence": [],
+      "at": "2026-07-28T14:09:13.164Z"
+    },
+    {
+      "pass": 1,
+      "area": "Storefront",
+      "name": "Password product opens desktop",
+      "status": "PASS",
+      "details": "url=https://notifystock-demo.myshopify.com/products/the-3p-fulfilled-snowboard, widgets=.notifystock-trigger-btn: 1, .notifystock-wishlist-trigger: 1, [class*='notifystock']: 29, overflow=false, brokenImages=0",
+      "evidence": [
+        "screenshots/pass-1-storefront-product-desktop.png"
+      ],
+      "at": "2026-07-28T14:09:18.384Z"
+    },
+    {
+      "pass": 1,
+      "area": "Back in Stock E2E",
+      "name": "Submit restock request desktop",
+      "status": "PASS",
+      "details": "network HTTP 200, email qa+notifystock-e2e-20260728-e2e-20260728T1408z-p1-desktop@example.com",
+      "evidence": [],
+      "at": "2026-07-28T14:09:20.199Z"
+    },
+    {
+      "pass": 1,
+      "area": "Storefront",
+      "name": "Demo home opens desktop",
+      "status": "PASS",
+      "details": "overflow=false, brokenImages=0",
+      "evidence": [
+        "screenshots/pass-1-storefront-home-desktop.png"
+      ],
+      "at": "2026-07-28T14:09:21.936Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify listing",
+      "name": "Listing opens",
+      "status": "PASS",
+      "details": "HTTP 200",
+      "evidence": [
+        "screenshots/pass-1-shopify-listing.png"
+      ],
+      "at": "2026-07-28T14:09:23.198Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "Dashboard",
+      "status": "AUTH_REQUIRED",
+      "details": "Shopify authentication required at https://accounts.shopify.com/session-service/login?state=7805f94e-c391-4366-8693-db6e26277508&prompt=select_account&verify=1785247763-eaaIsvfj%2FbO4C6LZkf3SWYMe2c06Abs93IznP4AwmNc%3D",
+      "evidence": [
+        "screenshots/pass-1-admin-auth-required-dashboard.png"
+      ],
+      "at": "2026-07-28T14:09:25.472Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "Products",
+      "status": "AUTH_REQUIRED",
+      "details": "Shopify authentication required at https://accounts.shopify.com/session-service/login?state=ec5e71a9-bf68-43c0-bba7-307d7a46c067&prompt=select_account&verify=1785247765-REZdJMzvlnY20CXUVtZbqDhWTAqM%2BLHGJKO%2Fe2EIqc0%3D",
+      "evidence": [
+        "screenshots/pass-1-admin-auth-required-products.png"
+      ],
+      "at": "2026-07-28T14:09:27.647Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "Back in Stock",
+      "status": "AUTH_REQUIRED",
+      "details": "Shopify authentication required at https://accounts.shopify.com/session-service/login?state=c8903953-f7e1-47f0-8ecb-27ffb0bf7773&prompt=select_account&verify=1785247767-N2gzY%2BEgXjiKrnbP89e4%2B6yNDku1PMPO4YpmD2iaGRM%3D",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "BIS products",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "BIS requests",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "BIS sent",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "BIS config",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "PreOrder",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "PreOrder products",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "PreOrder offers",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "PreOrder offer",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "PreOrder orders",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "PreOrder sent",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "PreOrder config",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "Wishlist",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "Wishlist products",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "Wishlist lists",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "Wishlist orders",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "Wishlist config",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "Low Stock",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "Low Stock config",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "Customization",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "Templates",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "Analytics",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "Settings",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "Pricing",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "Assistant",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "Webhooks",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "Theme editor",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "Shopify admin",
+      "name": "Themes",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:09:29.417Z"
+    },
+    {
+      "pass": 1,
+      "area": "AI assistant",
+      "name": "Public assistant sends and answers mobile",
+      "status": "PASS",
+      "details": "API HTTP 200, answer length 409",
+      "evidence": [
+        "screenshots/pass-1-assistant-answer-mobile.png"
+      ],
+      "at": "2026-07-28T14:09:35.149Z"
+    },
+    {
+      "pass": 1,
+      "area": "AI assistant",
+      "name": "Public assistant close/reopen mobile",
+      "status": "PASS",
+      "details": "panel closed after close button",
+      "evidence": [],
+      "at": "2026-07-28T14:09:35.611Z"
+    },
+    {
+      "pass": 1,
+      "area": "Storefront",
+      "name": "Password product opens mobile",
+      "status": "PASS",
+      "details": "url=https://notifystock-demo.myshopify.com/products/the-3p-fulfilled-snowboard, widgets=.notifystock-trigger-btn: 1, .notifystock-wishlist-trigger: 1, [class*='notifystock']: 29, overflow=false, brokenImages=0",
+      "evidence": [
+        "screenshots/pass-1-storefront-product-mobile.png"
+      ],
+      "at": "2026-07-28T14:10:00.869Z"
+    },
+    {
+      "pass": 1,
+      "area": "Back in Stock E2E",
+      "name": "Submit restock request mobile",
+      "status": "PASS",
+      "details": "network HTTP 200, email qa+notifystock-e2e-20260728-e2e-20260728T1408z-p1-mobile@example.com",
+      "evidence": [],
+      "at": "2026-07-28T14:10:02.756Z"
+    },
+    {
+      "pass": 1,
+      "area": "Storefront",
+      "name": "Demo home opens mobile",
+      "status": "PASS",
+      "details": "overflow=false, brokenImages=0",
+      "evidence": [
+        "screenshots/pass-1-storefront-home-mobile.png"
+      ],
+      "at": "2026-07-28T14:10:04.611Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Alerts & Preorder | Capture Shopify Product Demand\"",
+      "evidence": [
+        "screenshots/pass-1-public-home.png"
+      ],
+      "at": "2026-07-28T14:10:05.528Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/pricing/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Pricing | Free and Paid Shopify Plans\"",
+      "evidence": [
+        "screenshots/pass-1-public-pricing.png"
+      ],
+      "at": "2026-07-28T14:10:06.277Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/contact/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Book a NotifyStock Demo or Setup Call\"",
+      "evidence": [
+        "screenshots/pass-1-public-contact.png"
+      ],
+      "at": "2026-07-28T14:10:06.979Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/back-in-stock/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Back in Stock App for Shopify | NotifyStock\"",
+      "evidence": [
+        "screenshots/pass-1-public-back-in-stock.png"
+      ],
+      "at": "2026-07-28T14:10:07.792Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/preorder/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"PreOrder App for Shopify | NotifyStock\"",
+      "evidence": [
+        "screenshots/pass-1-public-preorder.png"
+      ],
+      "at": "2026-07-28T14:10:08.506Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/wishlist/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Wishlist App for Shopify | NotifyStock\"",
+      "evidence": [
+        "screenshots/pass-1-public-wishlist.png"
+      ],
+      "at": "2026-07-28T14:10:09.202Z"
+    },
+    {
+      "pass": 1,
+      "area": "Public website",
+      "name": "/low-stock/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Low Stock Counter for Shopify | NotifyStock\"",
+      "evidence": [
+        "screenshots/pass-1-public-low-stock.png"
+      ],
+      "at": "2026-07-28T14:10:09.913Z"
+    },
+    {
+      "pass": 1,
+      "area": "Manual protected checks",
+      "name": "Billing upgrade approval",
+      "status": "SKIPPED_MANUAL",
+      "details": "Clicking paid-plan upgrade can create a Shopify billing approval flow; verify manually in QA store only.",
+      "evidence": [],
+      "at": "2026-07-28T14:10:09.913Z"
+    },
+    {
+      "pass": 1,
+      "area": "Manual protected checks",
+      "name": "Billing decline/return",
+      "status": "SKIPPED_MANUAL",
+      "details": "Requires interactive Shopify billing page and owner-approved QA state.",
+      "evidence": [],
+      "at": "2026-07-28T14:10:09.913Z"
+    },
+    {
+      "pass": 1,
+      "area": "Manual protected checks",
+      "name": "Uninstall/reinstall",
+      "status": "SKIPPED_MANUAL",
+      "details": "Destructive test. Run only with explicit same-day owner approval.",
+      "evidence": [],
+      "at": "2026-07-28T14:10:09.913Z"
+    },
+    {
+      "pass": 1,
+      "area": "Manual protected checks",
+      "name": "Email/SMS/push live sends",
+      "status": "SKIPPED_MANUAL",
+      "details": "Use approved test emails/numbers only; avoid exposing provider secrets in videos.",
+      "evidence": [],
+      "at": "2026-07-28T14:10:09.913Z"
+    },
+    {
+      "pass": 1,
+      "area": "Manual protected checks",
+      "name": "Admin data verification",
+      "status": "SKIPPED_MANUAL",
+      "details": "Requires logged-in Shopify admin session to confirm saved requests/orders/reports.",
+      "evidence": [],
+      "at": "2026-07-28T14:10:09.913Z"
+    },
+    {
+      "pass": 1,
+      "area": "Browser runtime",
+      "name": "Console and page errors",
+      "status": "PASS",
+      "details": "1 console diagnostics, 0 page errors; first: chrome-error://chromewebdata/ Failed to load resource: the server responded with a status of 403 ()",
+      "evidence": [],
+      "at": "2026-07-28T14:10:09.913Z"
+    },
+    {
+      "pass": 2,
+      "area": "QA guide",
+      "name": "GitHub Pages QA form loads and is deindexed",
+      "status": "PASS",
+      "details": "16 sections, 71 tasks, 84 links, robots=noindex, nofollow",
+      "evidence": [
+        "screenshots/pass-2-qa-guide-overview.png"
+      ],
+      "at": "2026-07-28T14:10:14.363Z"
+    },
+    {
+      "pass": 2,
+      "area": "QA guide",
+      "name": "Backup GitHub Pages path loads",
+      "status": "PASS",
+      "details": "HTTP 200",
+      "evidence": [],
+      "at": "2026-07-28T14:10:14.492Z"
+    },
+    {
+      "pass": 2,
+      "area": "QA guide",
+      "name": "QA guide is not publicly published on production",
+      "status": "PASS",
+      "details": "production returned HTTP 404",
+      "evidence": [],
+      "at": "2026-07-28T14:10:14.780Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Alerts & Preorder | Capture Shopify Product Demand\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:15.769Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/back-in-stock/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Back in Stock App for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:24.424Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/brand/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Brand Assets\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:25.123Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/compare/amp-back-in-stock-alternative/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Amp Back in Stock Alternative | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:25.849Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/compare/klaviyo-back-in-stock-alternative/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Klaviyo Back in Stock Alternative for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:26.471Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/compare/notify-me-alternative/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Notify Me Alternative for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:27.090Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/compare/stoq-alternative/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"STOQ Alternative for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:27.730Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/compare/swym-wishlist-alternative/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Swym Wishlist Alternative for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:28.399Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/contact/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Book a NotifyStock Demo or Setup Call\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:29.089Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/features/customizable-widgets/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Customizable Shopify Storefront Widgets | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:29.805Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/features/notifications/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Email, SMS and Push Restock Alerts for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:30.528Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/features/product-modes/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Product Modes for Shopify Demand Workflows | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:31.193Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/features/reports-and-analytics/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Product Demand Reports and Analytics | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:31.841Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/features/templates/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Notification Templates for Shopify Demand Workflows | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:32.533Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/integrations/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Integrations for Shopify Alerts\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:33.157Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/integrations/klaviyo/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Klaviyo Back in Stock Integration | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:33.783Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/integrations/mailchimp/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Mailchimp Shopify Restock Alerts | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:34.406Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/integrations/onesignal-push/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"OneSignal Push Restock Alerts | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:35.051Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/integrations/twilio-sms/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Twilio SMS Restock Alerts for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:35.668Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/low-stock/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Low Stock Counter for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:36.294Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/migration/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Move to NotifyStock | Shopify Demand App Migration\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:36.929Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/preorder/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"PreOrder App for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:37.551Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/pricing/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Pricing | Free and Paid Shopify Plans\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:38.261Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/privacy/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Privacy Policy\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:38.850Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/resources/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Guides and Resources\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:39.555Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/resources/best-shopify-back-in-stock-apps/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Best Shopify Back in Stock Apps | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:40.217Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/resources/best-shopify-preorder-apps/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Best Shopify PreOrder Apps | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:40.886Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/resources/how-to-add-notify-me-button-shopify/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"How to Add a Notify Me Button on Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:41.567Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/resources/shopify-back-in-stock-alerts-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify Restock Alerts Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:42.226Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/resources/shopify-inventory-alerts-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify Inventory Alerts Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:42.888Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/resources/shopify-low-stock-counter-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify Low Stock Counter Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:43.616Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/resources/shopify-preorder-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify PreOrder Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:44.302Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/resources/shopify-sms-restock-alerts-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify SMS Restock Alerts Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:45.034Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/resources/shopify-waitlist-app-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify Waitlist App Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:45.776Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/resources/shopify-wishlist-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify Wishlist Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:46.478Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/shopify-theme-setup/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify Theme App Extension Setup | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:47.134Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/shopify/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock for Shopify | Product Demand Workflows\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:47.833Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/terms/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Terms of Service\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:48.448Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/wishlist/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Wishlist App for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:10:49.184Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "Header/footer internal links",
+      "status": "PASS",
+      "details": "39 internal links checked",
+      "evidence": [],
+      "at": "2026-07-28T14:10:52.117Z"
+    },
+    {
+      "pass": 2,
+      "area": "AI assistant",
+      "name": "Public assistant sends and answers desktop",
+      "status": "PASS",
+      "details": "API HTTP 200, answer length 424",
+      "evidence": [
+        "screenshots/pass-2-assistant-answer-desktop.png"
+      ],
+      "at": "2026-07-28T14:10:57.125Z"
+    },
+    {
+      "pass": 2,
+      "area": "AI assistant",
+      "name": "Public assistant close/reopen desktop",
+      "status": "PASS",
+      "details": "panel closed after close button",
+      "evidence": [],
+      "at": "2026-07-28T14:10:57.614Z"
+    },
+    {
+      "pass": 2,
+      "area": "Storefront",
+      "name": "Password product opens desktop",
+      "status": "PASS",
+      "details": "url=https://notifystock-demo.myshopify.com/products/the-3p-fulfilled-snowboard, widgets=.notifystock-trigger-btn: 1, .notifystock-wishlist-trigger: 1, [class*='notifystock']: 29, overflow=false, brokenImages=0",
+      "evidence": [
+        "screenshots/pass-2-storefront-product-desktop.png"
+      ],
+      "at": "2026-07-28T14:11:02.813Z"
+    },
+    {
+      "pass": 2,
+      "area": "Back in Stock E2E",
+      "name": "Submit restock request desktop",
+      "status": "PASS",
+      "details": "network HTTP 200, email qa+notifystock-e2e-20260728-e2e-20260728T1408z-p2-desktop@example.com",
+      "evidence": [],
+      "at": "2026-07-28T14:11:04.663Z"
+    },
+    {
+      "pass": 2,
+      "area": "Storefront",
+      "name": "Demo home opens desktop",
+      "status": "PASS",
+      "details": "overflow=false, brokenImages=0",
+      "evidence": [],
+      "at": "2026-07-28T14:11:06.446Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify listing",
+      "name": "Listing opens",
+      "status": "PASS",
+      "details": "HTTP 200",
+      "evidence": [],
+      "at": "2026-07-28T14:11:07.734Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "Dashboard",
+      "status": "AUTH_REQUIRED",
+      "details": "Shopify authentication required at https://accounts.shopify.com/session-service/login?state=597e4cf9-3e49-4c5e-8e78-11a00f0b164a&prompt=select_account&verify=1785247868-4kmbjGI4rmsOsFyX66qIFsdQwcOc7P5KiknM8JmnLVI%3D",
+      "evidence": [],
+      "at": "2026-07-28T14:11:09.804Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "Products",
+      "status": "AUTH_REQUIRED",
+      "details": "Shopify authentication required at https://accounts.shopify.com/session-service/login?state=37cb7703-d7dc-47ed-8d14-bc120ca8bbaa&prompt=select_account&verify=1785247870-rXo1pf7JQtYy6RCM81NgNZ8Iwe5hNPiIwS%2BK6rIirco%3D",
+      "evidence": [],
+      "at": "2026-07-28T14:11:11.611Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "Back in Stock",
+      "status": "AUTH_REQUIRED",
+      "details": "Shopify authentication required at https://accounts.shopify.com/session-service/login?state=1dc2d386-d265-4be1-9d81-f38f66c1d34c&prompt=select_account&verify=1785247871-SY%2BxOgT%2F7tI%2BVzxYfLF9fzlQLvg5K6n1%2F4wHmEc36iI%3D",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "BIS products",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "BIS requests",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "BIS sent",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "BIS config",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "PreOrder",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "PreOrder products",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "PreOrder offers",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "PreOrder offer",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "PreOrder orders",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "PreOrder sent",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "PreOrder config",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "Wishlist",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "Wishlist products",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "Wishlist lists",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "Wishlist orders",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "Wishlist config",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "Low Stock",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "Low Stock config",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "Customization",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "Templates",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "Analytics",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "Settings",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "Pricing",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "Assistant",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "Webhooks",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "Theme editor",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "Shopify admin",
+      "name": "Themes",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:13.377Z"
+    },
+    {
+      "pass": 2,
+      "area": "AI assistant",
+      "name": "Public assistant sends and answers mobile",
+      "status": "PASS",
+      "details": "API HTTP 200, answer length 425",
+      "evidence": [
+        "screenshots/pass-2-assistant-answer-mobile.png"
+      ],
+      "at": "2026-07-28T14:11:18.410Z"
+    },
+    {
+      "pass": 2,
+      "area": "AI assistant",
+      "name": "Public assistant close/reopen mobile",
+      "status": "PASS",
+      "details": "panel closed after close button",
+      "evidence": [],
+      "at": "2026-07-28T14:11:18.881Z"
+    },
+    {
+      "pass": 2,
+      "area": "Storefront",
+      "name": "Password product opens mobile",
+      "status": "PASS",
+      "details": "url=https://notifystock-demo.myshopify.com/products/the-3p-fulfilled-snowboard, widgets=.notifystock-trigger-btn: 1, .notifystock-wishlist-trigger: 1, [class*='notifystock']: 29, overflow=false, brokenImages=0",
+      "evidence": [
+        "screenshots/pass-2-storefront-product-mobile.png"
+      ],
+      "at": "2026-07-28T14:11:43.457Z"
+    },
+    {
+      "pass": 2,
+      "area": "Back in Stock E2E",
+      "name": "Submit restock request mobile",
+      "status": "PASS",
+      "details": "network HTTP 200, email qa+notifystock-e2e-20260728-e2e-20260728T1408z-p2-mobile@example.com",
+      "evidence": [],
+      "at": "2026-07-28T14:11:45.265Z"
+    },
+    {
+      "pass": 2,
+      "area": "Storefront",
+      "name": "Demo home opens mobile",
+      "status": "PASS",
+      "details": "overflow=false, brokenImages=0",
+      "evidence": [],
+      "at": "2026-07-28T14:11:47.042Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Alerts & Preorder | Capture Shopify Product Demand\"",
+      "evidence": [],
+      "at": "2026-07-28T14:11:47.875Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/pricing/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Pricing | Free and Paid Shopify Plans\"",
+      "evidence": [],
+      "at": "2026-07-28T14:11:48.566Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/contact/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Book a NotifyStock Demo or Setup Call\"",
+      "evidence": [],
+      "at": "2026-07-28T14:11:49.174Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/back-in-stock/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Back in Stock App for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:11:49.832Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/preorder/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"PreOrder App for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:11:50.460Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/wishlist/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Wishlist App for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:11:51.084Z"
+    },
+    {
+      "pass": 2,
+      "area": "Public website",
+      "name": "/low-stock/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Low Stock Counter for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:11:51.700Z"
+    },
+    {
+      "pass": 2,
+      "area": "Manual protected checks",
+      "name": "Billing upgrade approval",
+      "status": "SKIPPED_MANUAL",
+      "details": "Clicking paid-plan upgrade can create a Shopify billing approval flow; verify manually in QA store only.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:51.700Z"
+    },
+    {
+      "pass": 2,
+      "area": "Manual protected checks",
+      "name": "Billing decline/return",
+      "status": "SKIPPED_MANUAL",
+      "details": "Requires interactive Shopify billing page and owner-approved QA state.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:51.700Z"
+    },
+    {
+      "pass": 2,
+      "area": "Manual protected checks",
+      "name": "Uninstall/reinstall",
+      "status": "SKIPPED_MANUAL",
+      "details": "Destructive test. Run only with explicit same-day owner approval.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:51.700Z"
+    },
+    {
+      "pass": 2,
+      "area": "Manual protected checks",
+      "name": "Email/SMS/push live sends",
+      "status": "SKIPPED_MANUAL",
+      "details": "Use approved test emails/numbers only; avoid exposing provider secrets in videos.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:51.700Z"
+    },
+    {
+      "pass": 2,
+      "area": "Manual protected checks",
+      "name": "Admin data verification",
+      "status": "SKIPPED_MANUAL",
+      "details": "Requires logged-in Shopify admin session to confirm saved requests/orders/reports.",
+      "evidence": [],
+      "at": "2026-07-28T14:11:51.700Z"
+    },
+    {
+      "pass": 2,
+      "area": "Browser runtime",
+      "name": "Console and page errors",
+      "status": "PASS",
+      "details": "1 console diagnostics, 0 page errors; first: chrome-error://chromewebdata/ Failed to load resource: the server responded with a status of 403 ()",
+      "evidence": [],
+      "at": "2026-07-28T14:11:51.700Z"
+    },
+    {
+      "pass": 3,
+      "area": "QA guide",
+      "name": "GitHub Pages QA form loads and is deindexed",
+      "status": "PASS",
+      "details": "16 sections, 71 tasks, 84 links, robots=noindex, nofollow",
+      "evidence": [
+        "screenshots/pass-3-qa-guide-overview.png"
+      ],
+      "at": "2026-07-28T14:11:55.834Z"
+    },
+    {
+      "pass": 3,
+      "area": "QA guide",
+      "name": "Backup GitHub Pages path loads",
+      "status": "PASS",
+      "details": "HTTP 200",
+      "evidence": [],
+      "at": "2026-07-28T14:11:55.919Z"
+    },
+    {
+      "pass": 3,
+      "area": "QA guide",
+      "name": "QA guide is not publicly published on production",
+      "status": "PASS",
+      "details": "production returned HTTP 404",
+      "evidence": [],
+      "at": "2026-07-28T14:11:56.107Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Alerts & Preorder | Capture Shopify Product Demand\"",
+      "evidence": [],
+      "at": "2026-07-28T14:11:57.060Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/back-in-stock/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Back in Stock App for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:05.681Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/brand/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Brand Assets\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:06.415Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/compare/amp-back-in-stock-alternative/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Amp Back in Stock Alternative | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:07.096Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/compare/klaviyo-back-in-stock-alternative/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Klaviyo Back in Stock Alternative for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:07.711Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/compare/notify-me-alternative/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Notify Me Alternative for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:08.329Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/compare/stoq-alternative/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"STOQ Alternative for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:08.930Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/compare/swym-wishlist-alternative/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Swym Wishlist Alternative for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:09.545Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/contact/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Book a NotifyStock Demo or Setup Call\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:10.145Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/features/customizable-widgets/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Customizable Shopify Storefront Widgets | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:10.796Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/features/notifications/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Email, SMS and Push Restock Alerts for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:11.475Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/features/product-modes/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Product Modes for Shopify Demand Workflows | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:12.169Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/features/reports-and-analytics/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Product Demand Reports and Analytics | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:12.842Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/features/templates/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Notification Templates for Shopify Demand Workflows | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:13.519Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/integrations/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Integrations for Shopify Alerts\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:14.137Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/integrations/klaviyo/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Klaviyo Back in Stock Integration | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:14.829Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/integrations/mailchimp/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Mailchimp Shopify Restock Alerts | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:15.463Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/integrations/onesignal-push/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"OneSignal Push Restock Alerts | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:16.129Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/integrations/twilio-sms/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Twilio SMS Restock Alerts for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:16.744Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/low-stock/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Low Stock Counter for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:17.403Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/migration/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Move to NotifyStock | Shopify Demand App Migration\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:18.064Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/preorder/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"PreOrder App for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:18.684Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/pricing/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Pricing | Free and Paid Shopify Plans\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:19.311Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/privacy/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Privacy Policy\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:19.924Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/resources/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Guides and Resources\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:20.546Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/resources/best-shopify-back-in-stock-apps/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Best Shopify Back in Stock Apps | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:21.200Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/resources/best-shopify-preorder-apps/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Best Shopify PreOrder Apps | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:21.797Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/resources/how-to-add-notify-me-button-shopify/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"How to Add a Notify Me Button on Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:22.425Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/resources/shopify-back-in-stock-alerts-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify Restock Alerts Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:23.065Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/resources/shopify-inventory-alerts-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify Inventory Alerts Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:23.671Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/resources/shopify-low-stock-counter-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify Low Stock Counter Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:24.345Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/resources/shopify-preorder-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify PreOrder Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:24.972Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/resources/shopify-sms-restock-alerts-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify SMS Restock Alerts Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:25.625Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/resources/shopify-waitlist-app-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify Waitlist App Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:26.256Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/resources/shopify-wishlist-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify Wishlist Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:26.901Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/shopify-theme-setup/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify Theme App Extension Setup | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:27.521Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/shopify/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock for Shopify | Product Demand Workflows\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:28.136Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/terms/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Terms of Service\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:28.717Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/wishlist/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Wishlist App for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:12:29.403Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "Header/footer internal links",
+      "status": "PASS",
+      "details": "39 internal links checked",
+      "evidence": [],
+      "at": "2026-07-28T14:12:32.164Z"
+    },
+    {
+      "pass": 3,
+      "area": "AI assistant",
+      "name": "Public assistant sends and answers desktop",
+      "status": "PASS",
+      "details": "API HTTP 200, answer length 413",
+      "evidence": [
+        "screenshots/pass-3-assistant-answer-desktop.png"
+      ],
+      "at": "2026-07-28T14:12:37.782Z"
+    },
+    {
+      "pass": 3,
+      "area": "AI assistant",
+      "name": "Public assistant close/reopen desktop",
+      "status": "PASS",
+      "details": "panel closed after close button",
+      "evidence": [],
+      "at": "2026-07-28T14:12:38.244Z"
+    },
+    {
+      "pass": 3,
+      "area": "Storefront",
+      "name": "Password product opens desktop",
+      "status": "PASS",
+      "details": "url=https://notifystock-demo.myshopify.com/products/the-3p-fulfilled-snowboard, widgets=.notifystock-trigger-btn: 1, .notifystock-wishlist-trigger: 1, [class*='notifystock']: 29, overflow=false, brokenImages=0",
+      "evidence": [
+        "screenshots/pass-3-storefront-product-desktop.png"
+      ],
+      "at": "2026-07-28T14:12:45.462Z"
+    },
+    {
+      "pass": 3,
+      "area": "Back in Stock E2E",
+      "name": "Submit restock request desktop",
+      "status": "PASS",
+      "details": "network HTTP 200, email qa+notifystock-e2e-20260728-e2e-20260728T1408z-p3-desktop@example.com",
+      "evidence": [],
+      "at": "2026-07-28T14:12:47.413Z"
+    },
+    {
+      "pass": 3,
+      "area": "Storefront",
+      "name": "Demo home opens desktop",
+      "status": "PASS",
+      "details": "overflow=false, brokenImages=0",
+      "evidence": [],
+      "at": "2026-07-28T14:12:49.082Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify listing",
+      "name": "Listing opens",
+      "status": "PASS",
+      "details": "HTTP 200",
+      "evidence": [],
+      "at": "2026-07-28T14:12:50.374Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "Dashboard",
+      "status": "AUTH_REQUIRED",
+      "details": "Shopify authentication required at https://accounts.shopify.com/session-service/login?state=197562cd-507c-473b-ba6c-718cf76b3f5c&prompt=select_account&verify=1785247970-hFzryyqZj3TIi2cor55OewMnVggkv%2Bp3u3ZsUiRkFUs%3D",
+      "evidence": [],
+      "at": "2026-07-28T14:12:52.338Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "Products",
+      "status": "AUTH_REQUIRED",
+      "details": "Shopify authentication required at https://accounts.shopify.com/session-service/login?state=6370a13e-2191-4b36-8b9f-77f4463062d4&prompt=select_account&verify=1785247972-pQPX7w024q5Cenb6T%2BR2W0I2v%2FyoiZRL9bUCd9vCd8Y%3D",
+      "evidence": [],
+      "at": "2026-07-28T14:12:54.151Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "Back in Stock",
+      "status": "AUTH_REQUIRED",
+      "details": "Shopify authentication required at https://accounts.shopify.com/session-service/login?state=c1c31e3e-0ab7-4799-acee-7f55b1b65c88&prompt=select_account&verify=1785247974-BrzK1TtlKz0ObxoYkqlE5OpkaF%2Fk6xZw3D1fTvTslyk%3D",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "BIS products",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "BIS requests",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "BIS sent",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "BIS config",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "PreOrder",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "PreOrder products",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "PreOrder offers",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "PreOrder offer",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "PreOrder orders",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "PreOrder sent",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "PreOrder config",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "Wishlist",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "Wishlist products",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "Wishlist lists",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "Wishlist orders",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "Wishlist config",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "Low Stock",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "Low Stock config",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "Customization",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "Templates",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "Analytics",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "Settings",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "Pricing",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "Assistant",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "Webhooks",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "Theme editor",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "Shopify admin",
+      "name": "Themes",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:12:55.996Z"
+    },
+    {
+      "pass": 3,
+      "area": "AI assistant",
+      "name": "Public assistant sends and answers mobile",
+      "status": "PASS",
+      "details": "API HTTP 200, answer length 384",
+      "evidence": [
+        "screenshots/pass-3-assistant-answer-mobile.png"
+      ],
+      "at": "2026-07-28T14:13:01.073Z"
+    },
+    {
+      "pass": 3,
+      "area": "AI assistant",
+      "name": "Public assistant close/reopen mobile",
+      "status": "PASS",
+      "details": "panel closed after close button",
+      "evidence": [],
+      "at": "2026-07-28T14:13:01.559Z"
+    },
+    {
+      "pass": 3,
+      "area": "Storefront",
+      "name": "Password product opens mobile",
+      "status": "PASS",
+      "details": "url=https://notifystock-demo.myshopify.com/products/the-3p-fulfilled-snowboard, widgets=.notifystock-trigger-btn: 1, .notifystock-wishlist-trigger: 1, [class*='notifystock']: 29, overflow=false, brokenImages=0",
+      "evidence": [
+        "screenshots/pass-3-storefront-product-mobile.png"
+      ],
+      "at": "2026-07-28T14:13:26.240Z"
+    },
+    {
+      "pass": 3,
+      "area": "Back in Stock E2E",
+      "name": "Submit restock request mobile",
+      "status": "PASS",
+      "details": "network HTTP 200, email qa+notifystock-e2e-20260728-e2e-20260728T1408z-p3-mobile@example.com",
+      "evidence": [],
+      "at": "2026-07-28T14:13:28.121Z"
+    },
+    {
+      "pass": 3,
+      "area": "Storefront",
+      "name": "Demo home opens mobile",
+      "status": "PASS",
+      "details": "overflow=false, brokenImages=0",
+      "evidence": [],
+      "at": "2026-07-28T14:13:29.825Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Alerts & Preorder | Capture Shopify Product Demand\"",
+      "evidence": [],
+      "at": "2026-07-28T14:13:30.728Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/pricing/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Pricing | Free and Paid Shopify Plans\"",
+      "evidence": [],
+      "at": "2026-07-28T14:13:31.386Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/contact/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Book a NotifyStock Demo or Setup Call\"",
+      "evidence": [],
+      "at": "2026-07-28T14:13:32.002Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/back-in-stock/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Back in Stock App for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:13:32.701Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/preorder/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"PreOrder App for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:13:33.339Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/wishlist/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Wishlist App for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:13:33.955Z"
+    },
+    {
+      "pass": 3,
+      "area": "Public website",
+      "name": "/low-stock/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Low Stock Counter for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:13:34.577Z"
+    },
+    {
+      "pass": 3,
+      "area": "Manual protected checks",
+      "name": "Billing upgrade approval",
+      "status": "SKIPPED_MANUAL",
+      "details": "Clicking paid-plan upgrade can create a Shopify billing approval flow; verify manually in QA store only.",
+      "evidence": [],
+      "at": "2026-07-28T14:13:34.577Z"
+    },
+    {
+      "pass": 3,
+      "area": "Manual protected checks",
+      "name": "Billing decline/return",
+      "status": "SKIPPED_MANUAL",
+      "details": "Requires interactive Shopify billing page and owner-approved QA state.",
+      "evidence": [],
+      "at": "2026-07-28T14:13:34.577Z"
+    },
+    {
+      "pass": 3,
+      "area": "Manual protected checks",
+      "name": "Uninstall/reinstall",
+      "status": "SKIPPED_MANUAL",
+      "details": "Destructive test. Run only with explicit same-day owner approval.",
+      "evidence": [],
+      "at": "2026-07-28T14:13:34.577Z"
+    },
+    {
+      "pass": 3,
+      "area": "Manual protected checks",
+      "name": "Email/SMS/push live sends",
+      "status": "SKIPPED_MANUAL",
+      "details": "Use approved test emails/numbers only; avoid exposing provider secrets in videos.",
+      "evidence": [],
+      "at": "2026-07-28T14:13:34.577Z"
+    },
+    {
+      "pass": 3,
+      "area": "Manual protected checks",
+      "name": "Admin data verification",
+      "status": "SKIPPED_MANUAL",
+      "details": "Requires logged-in Shopify admin session to confirm saved requests/orders/reports.",
+      "evidence": [],
+      "at": "2026-07-28T14:13:34.577Z"
+    },
+    {
+      "pass": 3,
+      "area": "Browser runtime",
+      "name": "Console and page errors",
+      "status": "PASS",
+      "details": "1 console diagnostics, 0 page errors; first: chrome-error://chromewebdata/ Failed to load resource: the server responded with a status of 403 ()",
+      "evidence": [],
+      "at": "2026-07-28T14:13:34.577Z"
+    },
+    {
+      "pass": 4,
+      "area": "QA guide",
+      "name": "GitHub Pages QA form loads and is deindexed",
+      "status": "PASS",
+      "details": "16 sections, 71 tasks, 84 links, robots=noindex, nofollow",
+      "evidence": [
+        "screenshots/pass-4-qa-guide-overview.png"
+      ],
+      "at": "2026-07-28T14:13:38.885Z"
+    },
+    {
+      "pass": 4,
+      "area": "QA guide",
+      "name": "Backup GitHub Pages path loads",
+      "status": "PASS",
+      "details": "HTTP 200",
+      "evidence": [],
+      "at": "2026-07-28T14:13:38.965Z"
+    },
+    {
+      "pass": 4,
+      "area": "QA guide",
+      "name": "QA guide is not publicly published on production",
+      "status": "PASS",
+      "details": "production returned HTTP 404",
+      "evidence": [],
+      "at": "2026-07-28T14:13:39.203Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Alerts & Preorder | Capture Shopify Product Demand\"",
+      "evidence": [],
+      "at": "2026-07-28T14:13:40.019Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/back-in-stock/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Back in Stock App for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:13:48.635Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/brand/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Brand Assets\"",
+      "evidence": [],
+      "at": "2026-07-28T14:13:49.307Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/compare/amp-back-in-stock-alternative/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Amp Back in Stock Alternative | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:13:50.001Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/compare/klaviyo-back-in-stock-alternative/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Klaviyo Back in Stock Alternative for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:13:50.629Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/compare/notify-me-alternative/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Notify Me Alternative for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:13:51.247Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/compare/stoq-alternative/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"STOQ Alternative for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:13:51.887Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/compare/swym-wishlist-alternative/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Swym Wishlist Alternative for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:13:52.508Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/contact/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Book a NotifyStock Demo or Setup Call\"",
+      "evidence": [],
+      "at": "2026-07-28T14:13:53.141Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/features/customizable-widgets/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Customizable Shopify Storefront Widgets | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:13:53.831Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/features/notifications/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Email, SMS and Push Restock Alerts for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:13:54.483Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/features/product-modes/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Product Modes for Shopify Demand Workflows | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:13:55.147Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/features/reports-and-analytics/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Product Demand Reports and Analytics | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:13:55.810Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/features/templates/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Notification Templates for Shopify Demand Workflows | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:13:56.445Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/integrations/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Integrations for Shopify Alerts\"",
+      "evidence": [],
+      "at": "2026-07-28T14:13:57.105Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/integrations/klaviyo/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Klaviyo Back in Stock Integration | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:13:57.730Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/integrations/mailchimp/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Mailchimp Shopify Restock Alerts | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:13:58.379Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/integrations/onesignal-push/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"OneSignal Push Restock Alerts | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:13:59.024Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/integrations/twilio-sms/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Twilio SMS Restock Alerts for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:13:59.658Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/low-stock/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Low Stock Counter for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:14:00.290Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/migration/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Move to NotifyStock | Shopify Demand App Migration\"",
+      "evidence": [],
+      "at": "2026-07-28T14:14:00.934Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/preorder/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"PreOrder App for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:14:01.569Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/pricing/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Pricing | Free and Paid Shopify Plans\"",
+      "evidence": [],
+      "at": "2026-07-28T14:14:02.267Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/privacy/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Privacy Policy\"",
+      "evidence": [],
+      "at": "2026-07-28T14:14:02.859Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/resources/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Guides and Resources\"",
+      "evidence": [],
+      "at": "2026-07-28T14:14:03.507Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/resources/best-shopify-back-in-stock-apps/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Best Shopify Back in Stock Apps | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:14:04.147Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/resources/best-shopify-preorder-apps/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Best Shopify PreOrder Apps | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:14:04.771Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/resources/how-to-add-notify-me-button-shopify/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"How to Add a Notify Me Button on Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:14:05.401Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/resources/shopify-back-in-stock-alerts-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify Restock Alerts Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:14:06.103Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/resources/shopify-inventory-alerts-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify Inventory Alerts Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:14:06.722Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/resources/shopify-low-stock-counter-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify Low Stock Counter Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:14:07.400Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/resources/shopify-preorder-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify PreOrder Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:14:08.040Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/resources/shopify-sms-restock-alerts-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify SMS Restock Alerts Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:14:08.725Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/resources/shopify-waitlist-app-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify Waitlist App Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:14:09.383Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/resources/shopify-wishlist-guide/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify Wishlist Guide | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:14:10.091Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/shopify-theme-setup/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Shopify Theme App Extension Setup | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:14:10.725Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/shopify/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock for Shopify | Product Demand Workflows\"",
+      "evidence": [],
+      "at": "2026-07-28T14:14:11.364Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/terms/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Terms of Service\"",
+      "evidence": [],
+      "at": "2026-07-28T14:14:11.979Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/wishlist/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Wishlist App for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:14:12.634Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "Header/footer internal links",
+      "status": "PASS",
+      "details": "39 internal links checked",
+      "evidence": [],
+      "at": "2026-07-28T14:14:15.620Z"
+    },
+    {
+      "pass": 4,
+      "area": "AI assistant",
+      "name": "Public assistant sends and answers desktop",
+      "status": "PASS",
+      "details": "API HTTP 200, answer length 442",
+      "evidence": [
+        "screenshots/pass-4-assistant-answer-desktop.png"
+      ],
+      "at": "2026-07-28T14:14:21.818Z"
+    },
+    {
+      "pass": 4,
+      "area": "AI assistant",
+      "name": "Public assistant close/reopen desktop",
+      "status": "PASS",
+      "details": "panel closed after close button",
+      "evidence": [],
+      "at": "2026-07-28T14:14:22.278Z"
+    },
+    {
+      "pass": 4,
+      "area": "Storefront",
+      "name": "Password product opens desktop",
+      "status": "PASS",
+      "details": "url=https://notifystock-demo.myshopify.com/products/the-3p-fulfilled-snowboard, widgets=.notifystock-trigger-btn: 1, .notifystock-wishlist-trigger: 1, [class*='notifystock']: 29, overflow=false, brokenImages=0",
+      "evidence": [
+        "screenshots/pass-4-storefront-product-desktop.png"
+      ],
+      "at": "2026-07-28T14:14:27.536Z"
+    },
+    {
+      "pass": 4,
+      "area": "Back in Stock E2E",
+      "name": "Submit restock request desktop",
+      "status": "PASS",
+      "details": "network HTTP 200, email qa+notifystock-e2e-20260728-e2e-20260728T1408z-p4-desktop@example.com",
+      "evidence": [],
+      "at": "2026-07-28T14:14:29.395Z"
+    },
+    {
+      "pass": 4,
+      "area": "Storefront",
+      "name": "Demo home opens desktop",
+      "status": "PASS",
+      "details": "overflow=false, brokenImages=0",
+      "evidence": [],
+      "at": "2026-07-28T14:14:31.077Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify listing",
+      "name": "Listing opens",
+      "status": "PASS",
+      "details": "HTTP 200",
+      "evidence": [],
+      "at": "2026-07-28T14:14:32.278Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "Dashboard",
+      "status": "AUTH_REQUIRED",
+      "details": "Shopify authentication required at https://accounts.shopify.com/session-service/login?state=7878d296-b903-48dc-89fc-e78b61bbfdd9&prompt=select_account&verify=1785248072-f4ioeEIz3WNfSJemscANoo5u9WRJ0oON76kvAR%2BOst0%3D",
+      "evidence": [],
+      "at": "2026-07-28T14:14:34.153Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "Products",
+      "status": "AUTH_REQUIRED",
+      "details": "Shopify authentication required at https://accounts.shopify.com/session-service/login?state=90923382-7f09-4e7c-9995-b41fbcf96b29&prompt=select_account&verify=1785248074-gDCjyiqdvcxSy574iNhuN%2F4Hok%2BU1o7mqq5Les3cvA4%3D",
+      "evidence": [],
+      "at": "2026-07-28T14:14:36.570Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "Back in Stock",
+      "status": "AUTH_REQUIRED",
+      "details": "Shopify authentication required at https://accounts.shopify.com/session-service/login?state=30df2058-7beb-4de4-8620-a7b5c4d5e024&prompt=select_account&verify=1785248076-UHb7o725fP46kqClGiMUEVE8ALf%2F8F%2FVjyrtl4XJOf8%3D",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "BIS products",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "BIS requests",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "BIS sent",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "BIS config",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "PreOrder",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "PreOrder products",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "PreOrder offers",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "PreOrder offer",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "PreOrder orders",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "PreOrder sent",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "PreOrder config",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "Wishlist",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "Wishlist products",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "Wishlist lists",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "Wishlist orders",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "Wishlist config",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "Low Stock",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "Low Stock config",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "Customization",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "Templates",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "Analytics",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "Settings",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "Pricing",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "Assistant",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "Webhooks",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "Theme editor",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "Shopify admin",
+      "name": "Themes",
+      "status": "AUTH_REQUIRED",
+      "details": "Skipped direct navigation after repeated Shopify login gate in this pass; authenticated browser session required.",
+      "evidence": [],
+      "at": "2026-07-28T14:14:38.386Z"
+    },
+    {
+      "pass": 4,
+      "area": "AI assistant",
+      "name": "Public assistant sends and answers mobile",
+      "status": "PASS",
+      "details": "API HTTP 200, answer length 385",
+      "evidence": [
+        "screenshots/pass-4-assistant-answer-mobile.png"
+      ],
+      "at": "2026-07-28T14:14:44.659Z"
+    },
+    {
+      "pass": 4,
+      "area": "AI assistant",
+      "name": "Public assistant close/reopen mobile",
+      "status": "PASS",
+      "details": "panel closed after close button",
+      "evidence": [],
+      "at": "2026-07-28T14:14:45.120Z"
+    },
+    {
+      "pass": 4,
+      "area": "Storefront",
+      "name": "Password product opens mobile",
+      "status": "PASS",
+      "details": "url=https://notifystock-demo.myshopify.com/products/the-3p-fulfilled-snowboard, widgets=.notifystock-trigger-btn: 1, .notifystock-wishlist-trigger: 1, [class*='notifystock']: 29, overflow=false, brokenImages=0",
+      "evidence": [
+        "screenshots/pass-4-storefront-product-mobile.png"
+      ],
+      "at": "2026-07-28T14:15:10.073Z"
+    },
+    {
+      "pass": 4,
+      "area": "Back in Stock E2E",
+      "name": "Submit restock request mobile",
+      "status": "PASS",
+      "details": "network HTTP 200, email qa+notifystock-e2e-20260728-e2e-20260728T1408z-p4-mobile@example.com",
+      "evidence": [],
+      "at": "2026-07-28T14:15:11.877Z"
+    },
+    {
+      "pass": 4,
+      "area": "Storefront",
+      "name": "Demo home opens mobile",
+      "status": "PASS",
+      "details": "overflow=false, brokenImages=0",
+      "evidence": [],
+      "at": "2026-07-28T14:15:13.520Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Alerts & Preorder | Capture Shopify Product Demand\"",
+      "evidence": [],
+      "at": "2026-07-28T14:15:14.468Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/pricing/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"NotifyStock Pricing | Free and Paid Shopify Plans\"",
+      "evidence": [],
+      "at": "2026-07-28T14:15:15.201Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/contact/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Book a NotifyStock Demo or Setup Call\"",
+      "evidence": [],
+      "at": "2026-07-28T14:15:15.839Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/back-in-stock/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Back in Stock App for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:15:16.504Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/preorder/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"PreOrder App for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:15:17.175Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/wishlist/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Wishlist App for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:15:17.797Z"
+    },
+    {
+      "pass": 4,
+      "area": "Public website",
+      "name": "/low-stock/",
+      "status": "PASS",
+      "details": "HTTP 200, title=\"Low Stock Counter for Shopify | NotifyStock\"",
+      "evidence": [],
+      "at": "2026-07-28T14:15:18.451Z"
+    },
+    {
+      "pass": 4,
+      "area": "Manual protected checks",
+      "name": "Billing upgrade approval",
+      "status": "SKIPPED_MANUAL",
+      "details": "Clicking paid-plan upgrade can create a Shopify billing approval flow; verify manually in QA store only.",
+      "evidence": [],
+      "at": "2026-07-28T14:15:18.451Z"
+    },
+    {
+      "pass": 4,
+      "area": "Manual protected checks",
+      "name": "Billing decline/return",
+      "status": "SKIPPED_MANUAL",
+      "details": "Requires interactive Shopify billing page and owner-approved QA state.",
+      "evidence": [],
+      "at": "2026-07-28T14:15:18.451Z"
+    },
+    {
+      "pass": 4,
+      "area": "Manual protected checks",
+      "name": "Uninstall/reinstall",
+      "status": "SKIPPED_MANUAL",
+      "details": "Destructive test. Run only with explicit same-day owner approval.",
+      "evidence": [],
+      "at": "2026-07-28T14:15:18.451Z"
+    },
+    {
+      "pass": 4,
+      "area": "Manual protected checks",
+      "name": "Email/SMS/push live sends",
+      "status": "SKIPPED_MANUAL",
+      "details": "Use approved test emails/numbers only; avoid exposing provider secrets in videos.",
+      "evidence": [],
+      "at": "2026-07-28T14:15:18.451Z"
+    },
+    {
+      "pass": 4,
+      "area": "Manual protected checks",
+      "name": "Admin data verification",
+      "status": "SKIPPED_MANUAL",
+      "details": "Requires logged-in Shopify admin session to confirm saved requests/orders/reports.",
+      "evidence": [],
+      "at": "2026-07-28T14:15:18.451Z"
+    },
+    {
+      "pass": 4,
+      "area": "Browser runtime",
+      "name": "Console and page errors",
+      "status": "PASS",
+      "details": "1 console diagnostics, 0 page errors; first: chrome-error://chromewebdata/ Failed to load resource: the server responded with a status of 403 ()",
+      "evidence": [],
+      "at": "2026-07-28T14:15:18.451Z"
+    }
+  ]
+}
