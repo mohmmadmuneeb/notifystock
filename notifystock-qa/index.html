@@ -528,11 +528,47 @@
   <div class="section-header" onclick="toggle('sec-storefront')">
     <div class="section-num" style="background:linear-gradient(135deg,#00b894,#55efc4)">2</div>
     <h2>Does the demo storefront work?<small>Use password oowoff and test shopper actions</small></h2>
-    <span class="section-badge" id="badge-sec-storefront">0/3</span>
+    <span class="section-badge" id="badge-sec-storefront">0/5</span>
     <span class="section-chevron">&#9662;</span>
   </div>
   <div class="section-body">
     <div class="intro-text">This is like pretending to be a Shopify store customer. Open the demo store, use the password, and test what shoppers see on the product page.</div>
+    <div class="client-card">
+      <div class="client-top">
+        <div class="client-avatar" style="background:linear-gradient(135deg,#00b894,#55efc4)">S</div>
+        <div class="client-info"><h3>Storefront test links</h3><div class="client-stat">Use password oowoff when Shopify asks for the store password</div></div>
+      </div>
+      <div class="link-row">
+        <a class="link-btn link-custom" href="https://notifystock-demo.myshopify.com/" target="_blank">Demo home</a>
+        <a class="link-btn link-custom" href="https://notifystock-demo.myshopify.com/password?return_url=%2Fproducts%2Fthe-out-of-stock-snowboard" target="_blank">Sold-out product</a>
+        <a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/themes" target="_blank">Theme editor</a>
+        <a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app" target="_blank">App dashboard</a>
+      </div>
+    </div>
+    <div class="task" data-section="sec-storefront">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">Theme app embed is enabled and saved</div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Open the Theme editor link above.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Go to App embeds and confirm NotifyStock is enabled.</span></li>
+          <li class="step"><span class="step-num">3</span><span>Save the theme, refresh the product page, and confirm the widget still appears.</span></li>
+        </ul>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
+    <div class="task" data-section="sec-storefront">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">Storefront widget does not duplicate or break the theme</div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Open the sold-out product page.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Check there is only one correct NotifyStock widget for the product state.</span></li>
+          <li class="step"><span class="step-num">3</span><span>Product title, price, variant picker, add-to-cart area, and theme layout must not shift badly.</span></li>
+        </ul>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
     <div class="task" data-section="sec-storefront">
       <input type="checkbox" class="task-check" onchange="updateProgress()">
       <div class="task-content">
@@ -578,11 +614,69 @@
   <div class="section-header" onclick="toggle('sec-admin')">
     <div class="section-num" style="background:linear-gradient(135deg,#0984e3,#74b9ff)">3</div>
     <h2>Does the Shopify admin app work?<small>Dashboard, products, requests, settings, and embedded pages</small></h2>
-    <span class="section-badge" id="badge-sec-admin">0/4</span>
+    <span class="section-badge" id="badge-sec-admin">0/7</span>
     <span class="section-chevron">&#9662;</span>
   </div>
   <div class="section-body">
     <div class="intro-text">These checks need Shopify admin login. Do not show private credentials, API keys, customer data, or billing secrets in Loom.</div>
+    <div class="client-card">
+      <div class="client-top">
+        <div class="client-avatar" style="background:linear-gradient(135deg,#0984e3,#74b9ff)">A</div>
+        <div class="client-info"><h3>Shopify admin app links</h3><div class="client-stat">Open these links while logged into the demo Shopify store</div></div>
+      </div>
+      <div class="link-row">
+        <a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app" target="_blank">Dashboard</a>
+        <a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app/products" target="_blank">Products</a>
+        <a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app/back-in-stock" target="_blank">Back in Stock</a>
+        <a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app/back-in-stock/requests" target="_blank">Requests</a>
+        <a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app/preorder" target="_blank">PreOrder</a>
+        <a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app/wishlist" target="_blank">Wishlist</a>
+        <a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app/low-stock" target="_blank">Low Stock</a>
+        <a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app/customization" target="_blank">Customization</a>
+        <a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app/templates" target="_blank">Templates</a>
+        <a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app/analytics" target="_blank">Analytics</a>
+        <a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app/settings" target="_blank">Settings</a>
+        <a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app/pricing" target="_blank">Pricing</a>
+        <a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app/assistant" target="_blank">Assistant</a>
+      </div>
+    </div>
+    <div class="task" data-section="sec-admin">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">Admin direct links open the correct embedded app pages</div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Open Dashboard, Products, Back in Stock, PreOrder, Wishlist, Low Stock, Customization, Templates, Analytics, Settings, Pricing, and Assistant.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Each page should load inside Shopify admin, not as a blank page or old standalone dashboard.</span></li>
+          <li class="step"><span class="step-num">3</span><span>If Shopify asks for login, log in and retry the same direct link.</span></li>
+        </ul>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
+    <div class="task" data-section="sec-admin">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">Products and inventory test setup is ready</div>
+        <div class="link-row" style="margin-bottom:8px;"><a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/products" target="_blank">Shopify products</a><a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app/products" target="_blank">App products</a></div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Open Shopify Products and find one sold-out product, one preorder product, and one low-stock product.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Open App Products and confirm those products are visible to NotifyStock.</span></li>
+          <li class="step"><span class="step-num">3</span><span>Use clear QA product names or write product names in the Loom/report.</span></li>
+        </ul>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
+    <div class="task" data-section="sec-admin">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">Embedded app shell stays stable while moving between pages</div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Click through the app sidebar/header navigation for all main modules.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Watch for auth loops, duplicate Shopify frames, flashing blank pages, or broken navigation state.</span></li>
+          <li class="step"><span class="step-num">3</span><span>Refresh one deep page and confirm it still loads correctly.</span></li>
+        </ul>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
     <div class="task" data-section="sec-admin">
       <input type="checkbox" class="task-check" onchange="updateProgress()">
       <div class="task-content">
@@ -638,7 +732,7 @@
   <div class="section-header" onclick="toggle('sec-e2e')">
     <div class="section-num" style="background:linear-gradient(135deg,#fdcb6e,#f39c12)">4</div>
     <h2>Does full E2E flow make sense?<small>Storefront action should connect to admin data</small></h2>
-    <span class="section-badge" id="badge-sec-e2e">0/2</span>
+    <span class="section-badge" id="badge-sec-e2e">0/8</span>
     <span class="section-chevron">&#9662;</span>
   </div>
   <div class="section-body">
@@ -647,6 +741,7 @@
       <input type="checkbox" class="task-check" onchange="updateProgress()">
       <div class="task-content">
         <div class="task-title">Submit a test Back in Stock request and find it in admin</div>
+        <div class="link-row" style="margin-bottom:8px;"><a class="link-btn link-custom" href="https://notifystock-demo.myshopify.com/password?return_url=%2Fproducts%2Fthe-out-of-stock-snowboard" target="_blank">Sold-out product</a><a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app/back-in-stock/requests" target="_blank">Back in Stock requests</a></div>
         <ul class="steps">
           <li class="step"><span class="step-num">1</span><span>Use the demo store and submit a restock request with QA email.</span></li>
           <li class="step"><span class="step-num">2</span><span>Open Shopify admin and check Back in Stock requests.</span></li>
@@ -658,13 +753,94 @@
     <div class="task" data-section="sec-e2e">
       <input type="checkbox" class="task-check" onchange="updateProgress()">
       <div class="task-content">
+        <div class="task-title">Trigger or simulate a Back in Stock notification</div>
+        <div class="link-row" style="margin-bottom:8px;"><a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/products" target="_blank">Shopify products</a><a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app/back-in-stock/sent-notifications" target="_blank">Sent notifications</a></div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Use a QA product that has a restock subscriber.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Increase inventory or use the available test-send path.</span></li>
+          <li class="step"><span class="step-num">3</span><span>Confirm email delivery and sent-notification history. Check Inbox, Promotions, Updates, and Spam.</span></li>
+        </ul>
+        <div class="tip"><span class="tip-icon">&#128161;</span> Write where the email landed. If no email after 5 minutes, mark Fail.</div>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
+    <div class="task" data-section="sec-e2e">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">PreOrder setup and storefront reservation work</div>
+        <div class="link-row" style="margin-bottom:8px;"><a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app/preorder/offers" target="_blank">PreOrder offers</a><a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app/preorder/orders" target="_blank">PreOrder orders</a><a class="link-btn link-custom" href="https://notifystock-demo.myshopify.com/" target="_blank">Demo storefront</a></div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Open PreOrder offers and confirm the configured offer is enabled for the QA product.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Open the storefront product and complete the preorder/reservation action.</span></li>
+          <li class="step"><span class="step-num">3</span><span>Open PreOrder orders and confirm the reservation/order is visible with correct product context.</span></li>
+        </ul>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
+    <div class="task" data-section="sec-e2e">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">Wishlist add, remove, and admin reporting work</div>
+        <div class="link-row" style="margin-bottom:8px;"><a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app/wishlist/products" target="_blank">Wishlist products</a><a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app/wishlist/lists" target="_blank">Wishlist lists</a><a class="link-btn link-custom" href="https://notifystock-demo.myshopify.com/" target="_blank">Demo storefront</a></div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Add a product to wishlist on the storefront.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Open Wishlist products and lists in admin and find the saved product/customer context.</span></li>
+          <li class="step"><span class="step-num">3</span><span>Remove it from wishlist and confirm the storefront state changes cleanly.</span></li>
+        </ul>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
+    <div class="task" data-section="sec-e2e">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">Low Stock threshold shows correct urgency text</div>
+        <div class="link-row" style="margin-bottom:8px;"><a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app/low-stock/configuration" target="_blank">Low Stock config</a><a class="link-btn link-custom" href="https://notifystock-demo.myshopify.com/" target="_blank">Demo storefront</a></div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Open Low Stock configuration and check the threshold.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Open a product below that threshold on storefront.</span></li>
+          <li class="step"><span class="step-num">3</span><span>Confirm the urgency text is visible, grammatically correct, and does not duplicate theme messages.</span></li>
+        </ul>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
+    <div class="task" data-section="sec-e2e">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
         <div class="task-title">Check notifications and provider cost messaging</div>
+        <div class="link-row" style="margin-bottom:8px;"><a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app/templates" target="_blank">Templates</a><a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app/settings" target="_blank">Settings</a></div>
         <ul class="steps">
           <li class="step"><span class="step-num">1</span><span>Check email/SMS/push configuration language.</span></li>
           <li class="step"><span class="step-num">2</span><span>Email can be included. SMS/push/provider accounts should not sound free if merchant/provider cost applies.</span></li>
           <li class="step"><span class="step-num">3</span><span>No confusing claim about unlimited global SMS.</span></li>
         </ul>
         <div class="tip"><span class="tip-icon">&#128161;</span> If SMS is tested, note country/provider cost separately. Do not show private Twilio keys.</div>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
+    <div class="task" data-section="sec-e2e">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">Billing upgrade, decline, and downgrade path works</div>
+        <div class="link-row" style="margin-bottom:8px;"><a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app/pricing" target="_blank">App pricing</a></div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Open Pricing inside the app and confirm Free, Kickstart, Starter, and Standard are correct.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Start a paid-plan upgrade and confirm Shopify billing approval opens.</span></li>
+          <li class="step"><span class="step-num">3</span><span>Decline or approve only in test mode, then confirm the app returns cleanly and plan state is correct.</span></li>
+        </ul>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
+    <div class="task" data-section="sec-e2e">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">Uninstall and reinstall recovery is clean</div>
+        <div class="link-row" style="margin-bottom:8px;"><a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/settings/apps" target="_blank">Installed apps</a><a class="link-btn link-standard" href="https://apps.shopify.com/notifystock" target="_blank">Shopify listing</a></div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Only run this on the approved QA store, not a real merchant store.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Uninstall, confirm the app/uninstalled webhook is processed, then reinstall from the Shopify listing.</span></li>
+          <li class="step"><span class="step-num">3</span><span>Dashboard, settings, app embed, and main routes should work after reinstall.</span></li>
+        </ul>
+        <div class="tip"><span class="tip-icon">&#128161;</span> Skip this if the team does not want today’s QA store disrupted.</div>
         <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
       </div>
     </div>
@@ -712,7 +888,7 @@
   <div class="section-header" onclick="toggle('sec-mobile')">
     <div class="section-num" style="background:linear-gradient(135deg,#a29bfe,#6c5ce7)">6</div>
     <h2>Does mobile view look good?<small>Phone-size check for website, demo store, and assistant</small></h2>
-    <span class="section-badge" id="badge-sec-mobile">0/2</span>
+    <span class="section-badge" id="badge-sec-mobile">0/3</span>
     <span class="section-chevron">&#9662;</span>
   </div>
   <div class="section-body">
@@ -741,6 +917,19 @@
         <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
       </div>
     </div>
+    <div class="task" data-section="sec-mobile">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">Mobile Shopify admin pages are still usable</div>
+        <div class="link-row" style="margin-bottom:8px;"><a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app" target="_blank">Admin dashboard</a><a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app/back-in-stock" target="_blank">Back in Stock</a><a class="link-btn link-dashboard" href="https://admin.shopify.com/store/notifystock-demo/apps/notifystock-4/app/pricing" target="_blank">Pricing</a></div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Open the app in Shopify admin on a phone-size screen.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Dashboard, Back in Stock, Pricing, Settings, and Assistant should be readable.</span></li>
+          <li class="step"><span class="step-num">3</span><span>No clipped Polaris cards, hidden buttons, or impossible horizontal scrolling.</span></li>
+        </ul>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -748,7 +937,7 @@
   <div class="section-header" onclick="toggle('sec-loom')">
     <div class="section-num" style="background:linear-gradient(135deg,#636e72,#b2bec3)">7</div>
     <h2>Record the Urdu Loom video<small>Explain it like teaching a child in 5th grade</small></h2>
-    <span class="section-badge" id="badge-sec-loom">0/2</span>
+    <span class="section-badge" id="badge-sec-loom">0/3</span>
     <span class="section-chevron">&#9662;</span>
   </div>
   <div class="section-body">
@@ -774,6 +963,18 @@
           <li class="step"><span class="step-num">1</span><span>Open website, demo store, mobile view, and Shopify admin checklist.</span></li>
           <li class="step"><span class="step-num">2</span><span>Mark Pass/Fail/Skip on this page while recording.</span></li>
           <li class="step"><span class="step-num">3</span><span>At the end, download PDF or copy report and share it with Loom.</span></li>
+        </ul>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
+    <div class="task" data-section="sec-loom">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">Show the direct links and explain what each one tests</div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Open website, demo store, Shopify admin app, Theme editor, Products, Pricing, and Assistant from this QA page.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Explain in Urdu: storefront is what shopper sees, admin app is what merchant controls.</span></li>
+          <li class="step"><span class="step-num">3</span><span>End by showing Today's Results, then copy report or download PDF.</span></li>
         </ul>
         <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
       </div>
@@ -831,13 +1032,13 @@
   const ALL_SECTIONS = ['sec-website','sec-storefront','sec-admin','sec-e2e','sec-ai','sec-mobile','sec-loom','sec-final'];
   const SECTION_GROUPS = [
     { name: 'Public Website', color: [17,17,17], start: 0, end: 4 },
-    { name: 'Demo Storefront', color: [0,184,148], start: 4, end: 7 },
-    { name: 'Shopify Admin App', color: [9,132,227], start: 7, end: 11 },
-    { name: 'E2E Flow', color: [253,203,110], start: 11, end: 13 },
-    { name: 'AI Assistant', color: [225,112,85], start: 13, end: 15 },
-    { name: 'Mobile QA', color: [162,155,254], start: 15, end: 17 },
-    { name: 'Urdu Loom', color: [99,110,114], start: 17, end: 19 },
-    { name: 'Final Delivery', color: [0,184,148], start: 19, end: 20 },
+    { name: 'Demo Storefront', color: [0,184,148], start: 4, end: 9 },
+    { name: 'Shopify Admin App', color: [9,132,227], start: 9, end: 16 },
+    { name: 'E2E Flow', color: [253,203,110], start: 16, end: 24 },
+    { name: 'AI Assistant', color: [225,112,85], start: 24, end: 26 },
+    { name: 'Mobile QA', color: [162,155,254], start: 26, end: 29 },
+    { name: 'Urdu Loom', color: [99,110,114], start: 29, end: 32 },
+    { name: 'Final Delivery', color: [0,184,148], start: 32, end: 33 },
   ];
 
   function loadState() {
