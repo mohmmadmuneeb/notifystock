@@ -1,570 +1,1059 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>NotifyStock QA Testing Guide</title>
-    <meta name="description" content="Simple QA testing guide for NotifyStock public website, Shopify app features, demo flow, AI assistant, pricing, contact form, and Loom walkthrough.">
-    <meta name="robots" content="noindex, nofollow">
-    <style>
-      :root {
-        --ink: #0d0d0d;
-        --muted: #5d5d5d;
-        --line: #dedbd5;
-        --soft: #f7f5ef;
-        --paper: #ffffff;
-        --dark: #111111;
-        --green: #0b6b4f;
-        --amber: #b75f00;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>NotifyStock QA Daily Checklist</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #6C5CE7;
+      --primary-light: #a29bfe;
+      --success: #00b894;
+      --danger: #e17055;
+      --warning: #fdcb6e;
+      --skip: #b2bec3;
+      --bg: #f8f9fe;
+      --card: #ffffff;
+      --text: #2d3436;
+      --text-light: #636e72;
+      --border: #eef0f8;
+      --shadow: 0 4px 20px rgba(108, 92, 231, 0.08);
+      --radius: 16px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 20px 16px 40px;
+      max-width: 760px;
+      margin: 0 auto;
+      -webkit-font-smoothing: antialiased;
+    }
+    .hero {
+      background: linear-gradient(135deg, #6C5CE7 0%, #a29bfe 50%, #74b9ff 100%);
+      border-radius: 24px;
+      padding: 32px 24px 28px;
+      text-align: center;
+      color: white;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 160px; height: 160px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: -40px;
+      width: 120px; height: 120px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+    }
+    .hero h1 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+      position: relative;
+    }
+    .hero .tagline {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      font-weight: 500;
+      margin-bottom: 12px;
+      position: relative;
+    }
+    .hero .date-pill {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      position: relative;
+    }
+    .progress-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+    }
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .progress-header span { font-weight: 700; font-size: 0.95rem; }
+    .progress-pct {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .progress-track {
+      background: #eef0f8;
+      border-radius: 12px;
+      height: 14px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      border-radius: 12px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-light));
+      transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      width: 0%;
+    }
+    .stats-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .stat-chip {
+      flex: 1;
+      text-align: center;
+      padding: 8px;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .stat-pass { background: #e6f9f0; color: #00856a; }
+    .stat-fail { background: #fde8e4; color: #c44025; }
+    .stat-skip { background: #f0f0f5; color: #636e72; }
+    .stat-num { display: block; font-size: 1.2rem; font-weight: 800; }
+    .section {
+      background: var(--card);
+      border-radius: var(--radius);
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 20px;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.2s;
+    }
+    .section-header:hover { background: #fafbff; }
+    .section-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: white;
+      flex-shrink: 0;
+    }
+    .section-header h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      flex: 1;
+      line-height: 1.3;
+    }
+    .section-header h2 small {
+      display: block;
+      font-weight: 500;
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+    .section-badge {
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: #eef0f8;
+      color: var(--text-light);
+      white-space: nowrap;
+    }
+    .section-badge.done { background: #e6f9f0; color: #00856a; }
+    .section-chevron {
+      font-size: 1.2rem;
+      color: #b2bec3;
+      transition: transform 0.3s;
+    }
+    .section.collapsed .section-chevron { transform: rotate(-90deg); }
+    .section.collapsed .section-body { display: none; }
+    .section-body { padding: 0 20px 20px; }
+    .intro-text {
+      background: linear-gradient(135deg, #f8f9fe, #eef0f8);
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 0.88rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      border-left: 4px solid var(--primary-light);
+    }
+    .intro-text strong { color: var(--text); }
+    .client-card {
+      background: #fafbff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+    .client-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .client-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1rem;
+      color: white;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .client-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .client-info h3 { font-size: 0.95rem; font-weight: 700; }
+    .client-info .client-stat { font-size: 0.78rem; color: var(--text-light); }
+    .link-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 7px 14px;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .link-custom { background: #fff3e6; color: #e67e22; }
+    .link-custom:hover { background: #e67e22; color: white; }
+    .link-standard { background: #e8f4fd; color: #2e86de; }
+    .link-standard:hover { background: #2e86de; color: white; }
+    .link-dashboard { background: #f0e6ff; color: #111111; }
+    .link-dashboard:hover { background: #111111; color: white; }
+    .task {
+      display: flex;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    .task:last-child { border-bottom: none; }
+    .task-check {
+      width: 24px;
+      height: 24px;
+      border-radius: 8px;
+      border: 2.5px solid #ddd;
+      cursor: pointer;
+      flex-shrink: 0;
+      margin-top: 2px;
+      transition: all 0.2s;
+      position: relative;
+      appearance: none;
+      -webkit-appearance: none;
+      background: white;
+    }
+    .task-check:checked { background: var(--primary); border-color: var(--primary); }
+    .task-check:checked::after {
+      content: '';
+      position: absolute;
+      top: 3px; left: 7px;
+      width: 6px; height: 11px;
+      border: solid white;
+      border-width: 0 2.5px 2.5px 0;
+      transform: rotate(45deg);
+    }
+    .task-content { flex: 1; min-width: 0; }
+    .task-title {
+      font-weight: 700;
+      font-size: 0.92rem;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .task.checked .task-title { text-decoration: line-through; color: var(--text-light); }
+    .task.checked .task-desc, .task.checked .steps { opacity: 0.5; }
+    .steps { list-style: none; padding: 0; }
+    .step {
+      display: flex;
+      gap: 10px;
+      padding: 6px 0;
+      font-size: 0.85rem;
+      color: #555;
+      line-height: 1.5;
+    }
+    .step-num {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #eef0f8;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.72rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .tip {
+      background: #fff8e6;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 0.82rem;
+      color: #856404;
+      margin-top: 10px;
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+    .tip-icon { font-size: 1rem; flex-shrink: 0; }
+    .verdict { display: flex; gap: 8px; margin-top: 12px; }
+    .verdict button {
+      flex: 1;
+      padding: 8px 0;
+      border-radius: 10px;
+      border: 2px solid transparent;
+      font-weight: 700;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+    .v-pass { background: #e6f9f0; color: #00856a; border-color: #c3efe0; }
+    .v-pass:hover, .v-pass.active { background: var(--success); color: white; border-color: var(--success); }
+    .v-fail { background: #fde8e4; color: #c44025; border-color: #f8d2ca; }
+    .v-fail:hover, .v-fail.active { background: var(--danger); color: white; border-color: var(--danger); }
+    .v-skip { background: #f0f0f5; color: #636e72; border-color: #e0e0e8; }
+    .v-skip:hover, .v-skip.active { background: var(--skip); color: white; border-color: var(--skip); }
+    .results-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-top: 20px;
+      box-shadow: var(--shadow);
+      display: none;
+      border: 1px solid var(--border);
+    }
+    .results-card h2 { font-size: 1.1rem; margin-bottom: 16px; }
+    .result-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .result-row:last-child { border-bottom: none; }
+    .result-icon { font-size: 1.1rem; flex-shrink: 0; }
+    .result-title { flex: 1; }
+    .result-status {
+      font-weight: 700;
+      font-size: 0.78rem;
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+    .rs-pass { background: #e6f9f0; color: #00856a; }
+    .rs-fail { background: #fde8e4; color: #c44025; }
+    .rs-skip { background: #f0f0f5; color: #636e72; }
+    .rs-none { background: #f0f0f5; color: #aaa; }
+    .btn-group { display: flex; gap: 10px; margin-top: 14px; }
+    .btn-group .btn { flex: 1; }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 20px;
+      border-radius: 14px;
+      border: none;
+      font-family: inherit;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+    .btn-copy { background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: white; }
+    .btn-pdf { background: linear-gradient(135deg, #e17055, #fab1a0); color: white; }
+    .btn-reset {
+      background: #f0f0f5;
+      color: var(--text-light);
+      margin-top: 20px;
+      width: 100%;
+      font-size: 0.85rem;
+      padding: 12px;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.78rem;
+      color: #b2bec3;
+    }
+    @media (max-width: 600px) {
+      body { padding: 12px 10px 30px; }
+      .hero { padding: 24px 16px 22px; border-radius: 18px; }
+      .hero h1 { font-size: 1.4rem; }
+      .section-header { padding: 14px 14px; }
+      .section-body { padding: 0 14px 14px; }
+      .btn-group { flex-direction: column; }
+      .stats-row { flex-direction: row; }
+      .link-row { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
 
-      * {
-        box-sizing: border-box;
-      }
+<div class="hero">
+  <h1>NotifyStock QA Checklist</h1>
+  <p class="tagline">Daily QA for website, Shopify app, demo store, and AI assistant</p>
+  <div class="date-pill" id="dateBar"></div>
+</div>
 
-      body {
-        background: var(--soft);
-        color: var(--ink);
-        font-family: Arial, Helvetica, sans-serif;
-        line-height: 1.5;
-        margin: 0;
-      }
+<div class="progress-card">
+  <div class="progress-header">
+    <span>Your progress today</span>
+    <span class="progress-pct" id="progressPct">0%</span>
+  </div>
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+  <div class="stats-row">
+    <div class="stat-chip stat-pass"><span class="stat-num" id="statPass">0</span>Passed</div>
+    <div class="stat-chip stat-fail"><span class="stat-num" id="statFail">0</span>Failed</div>
+    <div class="stat-chip stat-skip"><span class="stat-num" id="statSkip">0</span>Skipped</div>
+  </div>
+</div>
 
-      a {
-        color: inherit;
-        text-decoration-thickness: 0.08em;
-        text-underline-offset: 0.2em;
-      }
-
-      .wrap {
-        margin: 0 auto;
-        max-width: 1180px;
-        padding: 28px;
-      }
-
-      .hero {
-        background: var(--paper);
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        display: grid;
-        gap: 28px;
-        grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
-        overflow: hidden;
-        padding: 32px;
-      }
-
-      .brand {
-        align-items: center;
-        display: flex;
-        gap: 12px;
-        margin-bottom: 42px;
-      }
-
-      .brand img {
-        border-radius: 9px;
-        height: 38px;
-        width: 38px;
-      }
-
-      .brand strong {
-        font-size: 25px;
-        letter-spacing: -0.02em;
-      }
-
-      h1 {
-        font-size: clamp(42px, 7vw, 78px);
-        letter-spacing: -0.045em;
-        line-height: 0.98;
-        margin: 0 0 18px;
-        max-width: 780px;
-      }
-
-      .lead {
-        color: #333333;
-        font-size: 19px;
-        max-width: 660px;
-      }
-
-      .actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 26px;
-      }
-
-      .button {
-        align-items: center;
-        border: 1px solid var(--dark);
-        border-radius: 8px;
-        display: inline-flex;
-        font-weight: 700;
-        justify-content: center;
-        min-height: 46px;
-        padding: 0 18px;
-        text-decoration: none;
-      }
-
-      .button.primary {
-        background: var(--dark);
-        color: #ffffff;
-      }
-
-      .hero-card {
-        align-self: stretch;
-        background: #151515;
-        border-radius: 14px;
-        color: #ffffff;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        min-height: 420px;
-        overflow: hidden;
-      }
-
-      .hero-card img {
-        display: block;
-        height: 275px;
-        object-fit: cover;
-        opacity: 0.82;
-        width: 100%;
-      }
-
-      .hero-card div {
-        padding: 22px;
-      }
-
-      .pill-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin: 22px 0 0;
-      }
-
-      .pill {
-        background: #efede6;
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        color: #333333;
-        font-size: 13px;
-        font-weight: 700;
-        padding: 8px 11px;
-      }
-
-      section {
-        margin-top: 24px;
-      }
-
-      .section-head {
-        align-items: end;
-        display: flex;
-        gap: 18px;
-        justify-content: space-between;
-        margin-bottom: 12px;
-      }
-
-      h2 {
-        font-size: clamp(28px, 4vw, 46px);
-        letter-spacing: -0.035em;
-        line-height: 1;
-        margin: 0;
-      }
-
-      .note {
-        color: var(--muted);
-        font-size: 14px;
-        margin: 0;
-        max-width: 470px;
-      }
-
-      .grid {
-        display: grid;
-        gap: 12px;
-      }
-
-      .grid.cols-2 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .grid.cols-3 {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .grid.cols-4 {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-
-      .card {
-        background: var(--paper);
-        border: 1px solid var(--line);
-        border-radius: 12px;
-        padding: 18px;
-      }
-
-      .card.dark {
-        background: #111111;
-        border-color: #111111;
-        color: #ffffff;
-      }
-
-      .card h3 {
-        font-size: 20px;
-        letter-spacing: -0.015em;
-        margin: 0 0 8px;
-      }
-
-      .card p {
-        color: var(--muted);
-        margin: 0;
-      }
-
-      .card.dark p {
-        color: rgba(255, 255, 255, 0.74);
-      }
-
-      .status {
-        color: var(--green);
-        font-weight: 800;
-      }
-
-      .warn {
-        color: var(--amber);
-        font-weight: 800;
-      }
-
-      table {
-        background: var(--paper);
-        border: 1px solid var(--line);
-        border-collapse: separate;
-        border-radius: 12px;
-        border-spacing: 0;
-        overflow: hidden;
-        width: 100%;
-      }
-
-      th,
-      td {
-        border-bottom: 1px solid var(--line);
-        padding: 14px;
-        text-align: left;
-        vertical-align: top;
-      }
-
-      th {
-        background: #f0eee7;
-        font-size: 13px;
-        text-transform: uppercase;
-      }
-
-      tr:last-child td {
-        border-bottom: 0;
-      }
-
-      .script {
-        background: #111111;
-        border-radius: 14px;
-        color: #ffffff;
-        padding: 22px;
-      }
-
-      .script h3 {
-        color: #ffffff;
-        margin-top: 0;
-      }
-
-      .script p,
-      .script li {
-        color: rgba(255, 255, 255, 0.84);
-      }
-
-      .urdu {
-        direction: rtl;
-        font-size: 17px;
-        text-align: right;
-      }
-
-      .tiny {
-        color: var(--muted);
-        font-size: 13px;
-      }
-
-      @media (max-width: 840px) {
-        .wrap {
-          padding: 14px;
-        }
-
-        .hero {
-          grid-template-columns: 1fr;
-          padding: 22px;
-        }
-
-        .brand {
-          margin-bottom: 26px;
-        }
-
-        .hero-card {
-          min-height: 0;
-        }
-
-        .grid.cols-2,
-        .grid.cols-3,
-        .grid.cols-4 {
-          grid-template-columns: 1fr;
-        }
-
-        .section-head {
-          align-items: start;
-          flex-direction: column;
-        }
-
-        table {
-          display: block;
-          overflow-x: auto;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <main class="wrap">
-      <section class="hero">
-        <div>
-          <div class="brand">
-            <img src="https://notifystock.com/notify-assets/notifystock-favicon.png" alt="NotifyStock app icon">
-            <strong>notifystock QA</strong>
+<div class="section" id="sec-website">
+  <div class="section-header" onclick="toggle('sec-website')">
+    <div class="section-num" style="background:linear-gradient(135deg,#111,#6b7280)">1</div>
+    <h2>Does the public website look correct?<small>Homepage, menus, product pages, pricing, and contact</small></h2>
+    <span class="section-badge" id="badge-sec-website">0/4</span>
+    <span class="section-chevron">&#9662;</span>
+  </div>
+  <div class="section-body">
+    <div class="intro-text">Open the public website and check it like a buyer. In the first few seconds, it should be clear that NotifyStock is a Shopify app for <strong>Back in Stock, PreOrder, Wishlist, and Low Stock</strong>.</div>
+    <div class="client-card">
+      <div class="client-top">
+        <div class="client-avatar">N</div>
+        <div class="client-info"><h3>Public website</h3><div class="client-stat">Main buyer-facing website and marketing pages</div></div>
+      </div>
+      <div class="link-row">
+        <a class="link-btn link-custom" href="https://notifystock.com/" target="_blank">Homepage</a>
+        <a class="link-btn link-standard" href="https://notifystock.com/pricing/" target="_blank">Pricing</a>
+        <a class="link-btn link-standard" href="https://notifystock.com/contact/" target="_blank">Contact</a>
+      </div>
+      <div class="task" data-section="sec-website">
+        <input type="checkbox" class="task-check" onchange="updateProgress()">
+        <div class="task-content">
+          <div class="task-title">Homepage explains the product in 10 seconds</div>
+          <ul class="steps">
+            <li class="step"><span class="step-num">1</span><span>Open the homepage and look only at the first screen.</span></li>
+            <li class="step"><span class="step-num">2</span><span>Confirm it explains four workflows: Back in Stock, PreOrder, Wishlist, and Low Stock.</span></li>
+            <li class="step"><span class="step-num">3</span><span>Check Start free, Live demo, demo password, and Shopify App Store wording.</span></li>
+          </ul>
+          <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+        </div>
+      </div>
+      <div class="task" data-section="sec-website">
+        <input type="checkbox" class="task-check" onchange="updateProgress()">
+        <div class="task-content">
+          <div class="task-title">Header and footer navigation work</div>
+          <ul class="steps">
+            <li class="step"><span class="step-num">1</span><span>Open Product, Features, Integrations, Resources, Pricing, and Contact links.</span></li>
+            <li class="step"><span class="step-num">2</span><span>Check no menu item goes to the wrong product or old page.</span></li>
+            <li class="step"><span class="step-num">3</span><span>Check footer links open without 404.</span></li>
+          </ul>
+          <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+        </div>
+      </div>
+      <div class="task" data-section="sec-website">
+        <input type="checkbox" class="task-check" onchange="updateProgress()">
+        <div class="task-content">
+          <div class="task-title">Product pages show matching screenshots</div>
+          <div class="link-row" style="margin-bottom:8px;">
+            <a class="link-btn link-custom" href="https://notifystock.com/back-in-stock/" target="_blank">Back in Stock</a>
+            <a class="link-btn link-custom" href="https://notifystock.com/preorder/" target="_blank">PreOrder</a>
+            <a class="link-btn link-custom" href="https://notifystock.com/wishlist/" target="_blank">Wishlist</a>
+            <a class="link-btn link-custom" href="https://notifystock.com/low-stock/" target="_blank">Low Stock</a>
           </div>
-          <h1>Simple QA testing guide for NotifyStock</h1>
-          <p class="lead">Use this page to test the live website, demo store, AI assistant, product pages, pricing, contact form, and main Shopify app features. It is written in easy words, like explaining to a 5th grade student.</p>
-          <div class="actions">
-            <a class="button primary" href="https://notifystock.com/" target="_blank" rel="noreferrer">Open live website</a>
-            <a class="button" href="https://notifystock-demo.myshopify.com/password?return_url=%2Fproducts%2Fthe-out-of-stock-snowboard" target="_blank" rel="noreferrer">Open demo store</a>
-            <a class="button" href="#loom-script">Urdu Loom script</a>
-          </div>
-          <div class="pill-row">
-            <span class="pill">Demo password: oowoff</span>
-            <span class="pill">Shopify App Store approved</span>
-            <span class="pill">4 workflows</span>
-            <span class="pill">AI assistant live</span>
-          </div>
+          <ul class="steps">
+            <li class="step"><span class="step-num">1</span><span>Open each product page.</span></li>
+            <li class="step"><span class="step-num">2</span><span>Make sure the screenshot matches the page topic.</span></li>
+            <li class="step"><span class="step-num">3</span><span>Images must not be cropped, stretched, faded, or unrelated.</span></li>
+          </ul>
+          <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
         </div>
-        <div class="hero-card">
-          <img src="https://notifystock.com/notify-assets/hero-back-in-stock.webp" alt="NotifyStock Back in Stock storefront screenshot">
-          <div>
-            <h2>What we are testing</h2>
-            <p>Back in Stock, PreOrder, Wishlist, Low Stock, notifications, analytics, pricing, contact form, mobile view, and the public AI assistant.</p>
-          </div>
+      </div>
+      <div class="task" data-section="sec-website">
+        <input type="checkbox" class="task-check" onchange="updateProgress()">
+        <div class="task-content">
+          <div class="task-title">Pricing and contact are clear</div>
+          <ul class="steps">
+            <li class="step"><span class="step-num">1</span><span>Open Pricing and confirm free plan, paid plans, Annual/Monthly, and 7-day trial messaging.</span></li>
+            <li class="step"><span class="step-num">2</span><span>Open Contact and confirm the form and support email are visible.</span></li>
+            <li class="step"><span class="step-num">3</span><span>No fake unlimited claims. SMS/provider costs should not be confusing.</span></li>
+          </ul>
+          <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</div>
 
-      <section>
-        <div class="section-head">
-          <h2>Quick status</h2>
-          <p class="note">This guide points to the live production website. Use it as the checklist during manual QA and Loom recording.</p>
-        </div>
-        <div class="grid cols-4">
-          <div class="card"><h3>Website</h3><p><span class="status">Live:</span> <a href="https://notifystock.com/" target="_blank" rel="noreferrer">notifystock.com</a></p></div>
-          <div class="card"><h3>Demo store</h3><p><span class="status">Password:</span> oowoff</p></div>
-          <div class="card"><h3>CTA</h3><p><span class="status">Start free</span> opens Shopify App Store listing.</p></div>
-          <div class="card"><h3>AI assistant</h3><p><span class="status">Live</span> on public website bottom-right.</p></div>
-        </div>
-      </section>
+<div class="section" id="sec-storefront">
+  <div class="section-header" onclick="toggle('sec-storefront')">
+    <div class="section-num" style="background:linear-gradient(135deg,#00b894,#55efc4)">2</div>
+    <h2>Does the demo storefront work?<small>Use password oowoff and test shopper actions</small></h2>
+    <span class="section-badge" id="badge-sec-storefront">0/3</span>
+    <span class="section-chevron">&#9662;</span>
+  </div>
+  <div class="section-body">
+    <div class="intro-text">This is like pretending to be a Shopify store customer. Open the demo store, use the password, and test what shoppers see on the product page.</div>
+    <div class="task" data-section="sec-storefront">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">Open the demo store with password</div>
+        <div class="link-row" style="margin-bottom:8px;"><a class="link-btn link-custom" href="https://notifystock-demo.myshopify.com/password?return_url=%2Fproducts%2Fthe-out-of-stock-snowboard" target="_blank">Open demo store</a></div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Open the demo store link.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Enter password: <strong>oowoff</strong>.</span></li>
+          <li class="step"><span class="step-num">3</span><span>Confirm the product page opens correctly.</span></li>
+        </ul>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
+    <div class="task" data-section="sec-storefront">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">Back in Stock and Wishlist storefront actions work</div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Find the NotifyStock widget on the product page.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Open the notify-me/restock modal and check email field, SMS/push options if shown, privacy text, and submit state.</span></li>
+          <li class="step"><span class="step-num">3</span><span>Click Wishlist and confirm it visibly changes state.</span></li>
+        </ul>
+        <div class="tip"><span class="tip-icon">&#128161;</span> Do not use private customer data. Use a QA email only.</div>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
+    <div class="task" data-section="sec-storefront">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">PreOrder and Low Stock messaging are understandable</div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Check if preorder or reservation messaging is shown where configured.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Check low-stock urgency text for grammar and layout.</span></li>
+          <li class="step"><span class="step-num">3</span><span>Buttons should not overlap product form, price, or theme layout.</span></li>
+        </ul>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
+  </div>
+</div>
 
-      <section>
-        <div class="section-head">
-          <h2>Main test links</h2>
-          <p class="note">Open each link, look at desktop and mobile, then tick the expected result.</p>
-        </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Page / feature</th>
-              <th>Open this</th>
-              <th>Check this like a child</th>
-              <th>Expected result</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Homepage</td>
-              <td><a href="https://notifystock.com/" target="_blank" rel="noreferrer">notifystock.com</a></td>
-              <td>Can I understand in 10 seconds what this app does?</td>
-              <td>Shows all-in-one Shopify demand app, Start free, Live demo, product visuals.</td>
-            </tr>
-            <tr>
-              <td>Navigation</td>
-              <td><a href="https://notifystock.com/" target="_blank" rel="noreferrer">Header menu</a></td>
-              <td>Click Product, Features, Integrations, Resources, Pricing.</td>
-              <td>Menus open smoothly, links work, mobile hamburger works.</td>
-            </tr>
-            <tr>
-              <td>Back in Stock</td>
-              <td><a href="https://notifystock.com/back-in-stock/" target="_blank" rel="noreferrer">Back in Stock page</a></td>
-              <td>Does this explain sold-out product requests?</td>
-              <td>Relevant screenshots, workflow copy, FAQ, and CTA.</td>
-            </tr>
-            <tr>
-              <td>PreOrder</td>
-              <td><a href="https://notifystock.com/preorder/" target="_blank" rel="noreferrer">PreOrder page</a></td>
-              <td>Does this explain launching or reserving products early?</td>
-              <td>PreOrder-specific screenshots and copy.</td>
-            </tr>
-            <tr>
-              <td>Wishlist</td>
-              <td><a href="https://notifystock.com/wishlist/" target="_blank" rel="noreferrer">Wishlist page</a></td>
-              <td>Does this explain saving products for later?</td>
-              <td>Wishlist-specific screenshots and copy.</td>
-            </tr>
-            <tr>
-              <td>Low Stock</td>
-              <td><a href="https://notifystock.com/low-stock/" target="_blank" rel="noreferrer">Low Stock page</a></td>
-              <td>Does this explain urgency when inventory is low?</td>
-              <td>Low-stock counter/threshold story is clear.</td>
-            </tr>
-            <tr>
-              <td>Pricing</td>
-              <td><a href="https://notifystock.com/pricing/" target="_blank" rel="noreferrer">Pricing page</a></td>
-              <td>Are plan prices, Annual/Monthly, limits, and trial clear?</td>
-              <td>No fake unlimited claims. Seven-day trial is clear.</td>
-            </tr>
-            <tr>
-              <td>Contact form</td>
-              <td><a href="https://notifystock.com/contact/" target="_blank" rel="noreferrer">Contact page</a></td>
-              <td>Can a person request help easily?</td>
-              <td>Form is visible. Email support@notifystock.com is visible.</td>
-            </tr>
-            <tr>
-              <td>AI assistant</td>
-              <td><a href="https://notifystock.com/" target="_blank" rel="noreferrer">Bottom-right chat icon</a></td>
-              <td>Ask: "Does NotifyStock support preorder and wishlist?"</td>
-              <td>Assistant opens, answers, no raw **markdown**, no huge blank space.</td>
-            </tr>
-            <tr>
-              <td>Demo store</td>
-              <td><a href="https://notifystock-demo.myshopify.com/password?return_url=%2Fproducts%2Fthe-out-of-stock-snowboard" target="_blank" rel="noreferrer">Live demo store</a></td>
-              <td>Enter password oowoff and test storefront widget.</td>
-              <td>Store opens and product workflow can be shown in Loom.</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+<div class="section" id="sec-admin">
+  <div class="section-header" onclick="toggle('sec-admin')">
+    <div class="section-num" style="background:linear-gradient(135deg,#0984e3,#74b9ff)">3</div>
+    <h2>Does the Shopify admin app work?<small>Dashboard, products, requests, settings, and embedded pages</small></h2>
+    <span class="section-badge" id="badge-sec-admin">0/4</span>
+    <span class="section-chevron">&#9662;</span>
+  </div>
+  <div class="section-body">
+    <div class="intro-text">These checks need Shopify admin login. Do not show private credentials, API keys, customer data, or billing secrets in Loom.</div>
+    <div class="task" data-section="sec-admin">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">Dashboard loads inside Shopify admin</div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Open NotifyStock from Shopify admin.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Dashboard should load without auth loop, blank screen, or console error.</span></li>
+          <li class="step"><span class="step-num">3</span><span>Navigation sidebar and main cards should be readable.</span></li>
+        </ul>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
+    <div class="task" data-section="sec-admin">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">Back in Stock admin pages work</div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Open products, requests, sent notifications, and configuration.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Tables, filters, empty states, and action buttons should be readable.</span></li>
+          <li class="step"><span class="step-num">3</span><span>No broken routes or missing data errors.</span></li>
+        </ul>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
+    <div class="task" data-section="sec-admin">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">PreOrder, Wishlist, and Low Stock admin pages work</div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Open PreOrder offers/products/orders/configuration.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Open Wishlist lists/products/orders/configuration.</span></li>
+          <li class="step"><span class="step-num">3</span><span>Open Low Stock configuration and verify threshold settings.</span></li>
+        </ul>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
+    <div class="task" data-section="sec-admin">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">Templates, customization, analytics, integrations, and settings work</div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Open templates and customization. Editing should stay inside Shopify admin.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Open analytics and confirm charts/cards do not break.</span></li>
+          <li class="step"><span class="step-num">3</span><span>Open integrations/settings and check provider-owned account messaging.</span></li>
+        </ul>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
+  </div>
+</div>
 
-      <section>
-        <div class="section-head">
-          <h2>Important feature testing</h2>
-          <p class="note">These are the core app features to show in the QA video.</p>
-        </div>
-        <div class="grid cols-3">
-          <div class="card"><h3>1. Back in Stock</h3><p>Sold-out shoppers can request a restock alert. Admin can see demand.</p></div>
-          <div class="card"><h3>2. PreOrder</h3><p>Merchant can collect interest or reservations before product is fully available.</p></div>
-          <div class="card"><h3>3. Wishlist</h3><p>Shopper can save a product. Merchant can see saved product interest.</p></div>
-          <div class="card"><h3>4. Low Stock</h3><p>Store can show urgency when inventory is close to low threshold.</p></div>
-          <div class="card"><h3>Notifications</h3><p>Email is included. SMS/push depends on provider setup like Twilio or OneSignal.</p></div>
-          <div class="card"><h3>Analytics</h3><p>Merchant can understand product demand, saved items, requests, and trends.</p></div>
-          <div class="card"><h3>Theme setup</h3><p>Use Shopify Theme Editor blocks. No manual theme-code edits should be required.</p></div>
-          <div class="card"><h3>Customization</h3><p>Merchant can adjust labels, colors, forms, templates, and product modes.</p></div>
-          <div class="card"><h3>Pricing/billing</h3><p>Free plan, paid plans, Annual/Monthly, and Shopify billing must be clear.</p></div>
-        </div>
-      </section>
+<div class="section" id="sec-e2e">
+  <div class="section-header" onclick="toggle('sec-e2e')">
+    <div class="section-num" style="background:linear-gradient(135deg,#fdcb6e,#f39c12)">4</div>
+    <h2>Does full E2E flow make sense?<small>Storefront action should connect to admin data</small></h2>
+    <span class="section-badge" id="badge-sec-e2e">0/2</span>
+    <span class="section-chevron">&#9662;</span>
+  </div>
+  <div class="section-body">
+    <div class="intro-text">This is the most important buyer proof: a shopper action on the demo store should be understandable inside the merchant admin area.</div>
+    <div class="task" data-section="sec-e2e">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">Submit a test Back in Stock request and find it in admin</div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Use the demo store and submit a restock request with QA email.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Open Shopify admin and check Back in Stock requests.</span></li>
+          <li class="step"><span class="step-num">3</span><span>Request should appear or the expected test-state should be clearly explained.</span></li>
+        </ul>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
+    <div class="task" data-section="sec-e2e">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">Check notifications and provider cost messaging</div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Check email/SMS/push configuration language.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Email can be included. SMS/push/provider accounts should not sound free if merchant/provider cost applies.</span></li>
+          <li class="step"><span class="step-num">3</span><span>No confusing claim about unlimited global SMS.</span></li>
+        </ul>
+        <div class="tip"><span class="tip-icon">&#128161;</span> If SMS is tested, note country/provider cost separately. Do not show private Twilio keys.</div>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
+  </div>
+</div>
 
-      <section>
-        <div class="section-head">
-          <h2>Mobile QA</h2>
-          <p class="note">Most buyers check from mobile. Do not skip this.</p>
-        </div>
-        <div class="grid cols-2">
-          <div class="card">
-            <h3>Mobile website</h3>
-            <p>Open homepage on phone size. Header logo, hamburger, hero text, Start free, Live demo, screenshots, and AI assistant must not overlap.</p>
-          </div>
-          <div class="card">
-            <h3>Mobile menus</h3>
-            <p>Tap hamburger. Product, Features, Integrations, Resources, Pricing, and CTA links should be easy to read and tap.</p>
-          </div>
-          <div class="card">
-            <h3>Mobile AI assistant</h3>
-            <p>Open assistant. It should look compact, answer questions, and not hide the screen with broken blank space.</p>
-          </div>
-          <div class="card">
-            <h3>Mobile demo store</h3>
-            <p>Open the demo store with password oowoff. Product page and widget should fit without sideways scrolling.</p>
-          </div>
-        </div>
-      </section>
+<div class="section" id="sec-ai">
+  <div class="section-header" onclick="toggle('sec-ai')">
+    <div class="section-num" style="background:linear-gradient(135deg,#e17055,#fab1a0)">5</div>
+    <h2>Is the AI assistant working?<small>Public assistant and Shopify admin assistant</small></h2>
+    <span class="section-badge" id="badge-sec-ai">0/2</span>
+    <span class="section-chevron">&#9662;</span>
+  </div>
+  <div class="section-body">
+    <div class="intro-text">NotifyStock has AI support. It should open, accept a question, return a useful answer, and not break the layout.</div>
+    <div class="task" data-section="sec-ai">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">Public website AI assistant answers</div>
+        <div class="link-row" style="margin-bottom:8px;"><a class="link-btn link-custom" href="https://notifystock.com/" target="_blank">Open homepage</a></div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Click the bottom-right AI assistant bubble.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Ask: <strong>Does NotifyStock support preorder and wishlist?</strong></span></li>
+          <li class="step"><span class="step-num">3</span><span>It should answer normally, not show raw markdown, blank space, or API error.</span></li>
+        </ul>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
+    <div class="task" data-section="sec-ai">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">Shopify admin AI assistant answers</div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Open the Assistant page inside Shopify admin.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Ask for setup help or a product workflow question.</span></li>
+          <li class="step"><span class="step-num">3</span><span>Answer should be useful and page should remain stable.</span></li>
+        </ul>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
+  </div>
+</div>
 
-      <section>
-        <div class="section-head">
-          <h2>Admin app QA</h2>
-          <p class="note">Shopify admin E2E checklist. These checks need Shopify admin login. Do not put private passwords in Loom.</p>
-        </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Admin area</th>
-              <th>What to show</th>
-              <th>Expected result</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Dashboard</td><td>Open NotifyStock app in Shopify admin.</td><td>Dashboard loads without errors.</td></tr>
-            <tr><td>Back in Stock</td><td>Open products/configuration/requests.</td><td>Workflow is clear and data is readable.</td></tr>
-            <tr><td>PreOrder</td><td>Open configurations/offers/orders.</td><td>PreOrder settings and records are visible.</td></tr>
-            <tr><td>Wishlist</td><td>Open wishlist lists/products/orders.</td><td>Wishlist activity is visible.</td></tr>
-            <tr><td>Low Stock</td><td>Open low-stock configuration.</td><td>Threshold and widget settings are understandable.</td></tr>
-            <tr><td>Templates</td><td>Open notification templates.</td><td>Workflow-specific message templates are clear.</td></tr>
-            <tr><td>AI Assistant</td><td>Open admin assistant and ask a setup question.</td><td>Assistant answers from NotifyStock context.</td></tr>
-          </tbody>
-        </table>
-      </section>
+<div class="section" id="sec-mobile">
+  <div class="section-header" onclick="toggle('sec-mobile')">
+    <div class="section-num" style="background:linear-gradient(135deg,#a29bfe,#6c5ce7)">6</div>
+    <h2>Does mobile view look good?<small>Phone-size check for website, demo store, and assistant</small></h2>
+    <span class="section-badge" id="badge-sec-mobile">0/2</span>
+    <span class="section-chevron">&#9662;</span>
+  </div>
+  <div class="section-body">
+    <div class="intro-text">Most buyers will open links on mobile. Check the small screen carefully before sending Loom.</div>
+    <div class="task" data-section="sec-mobile">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">Mobile website layout is clean</div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Open homepage, pricing, contact, and all four product pages on mobile.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Check header, hamburger menu, hero, CTA, screenshots, and footer.</span></li>
+          <li class="step"><span class="step-num">3</span><span>No overlap, horizontal scroll, white text on white image, or huge blank space.</span></li>
+        </ul>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
+    <div class="task" data-section="sec-mobile">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">Mobile demo store and assistant work</div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Open the demo store on mobile and enter password oowoff.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Tap widget buttons and confirm modals fit the screen.</span></li>
+          <li class="step"><span class="step-num">3</span><span>Open AI assistant and confirm typing/sending works.</span></li>
+        </ul>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
+  </div>
+</div>
 
-      <section id="loom-script">
-        <div class="section-head">
-          <h2>Urdu Loom video script</h2>
-          <p class="note">Record this in Loom. Speak slowly and explain like the viewer is in 5th grade.</p>
-        </div>
-        <div class="script">
-          <h3>Video title</h3>
-          <p>NotifyStock QA Testing Walkthrough - Simple Urdu Explanation</p>
+<div class="section" id="sec-loom">
+  <div class="section-header" onclick="toggle('sec-loom')">
+    <div class="section-num" style="background:linear-gradient(135deg,#636e72,#b2bec3)">7</div>
+    <h2>Record the Urdu Loom video<small>Explain it like teaching a child in 5th grade</small></h2>
+    <span class="section-badge" id="badge-sec-loom">0/2</span>
+    <span class="section-chevron">&#9662;</span>
+  </div>
+  <div class="section-body">
+    <div class="intro-text">Record slowly in Urdu. Do not show private Shopify credentials, API keys, database rows, customer data, or private passwords.</div>
+    <div class="task" data-section="sec-loom">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">Show the dream and feature value</div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Say: NotifyStock helps Shopify stores capture demand instead of losing shoppers.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Show Back in Stock, PreOrder, Wishlist, Low Stock, notifications, analytics, and customization.</span></li>
+          <li class="step"><span class="step-num">3</span><span>Keep explanation simple: shopper asks, app saves demand, merchant follows up.</span></li>
+        </ul>
+        <div class="tip"><span class="tip-icon">&#128161;</span> Urdu line: "Yeh app sold-out aur upcoming products ki demand ko sales mein convert karne mein help karti hai."</div>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
+    <div class="task" data-section="sec-loom">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">Show real QA, not only presentation</div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Open website, demo store, mobile view, and Shopify admin checklist.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Mark Pass/Fail/Skip on this page while recording.</span></li>
+          <li class="step"><span class="step-num">3</span><span>At the end, download PDF or copy report and share it with Loom.</span></li>
+        </ul>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
+  </div>
+</div>
 
-          <h3>Opening - 20 seconds</h3>
-          <p class="urdu">السلام علیکم، آج میں NotifyStock کی QA testing دکھا رہا ہوں۔ آسان الفاظ میں، یہ Shopify app دکان والوں کو بتاتی ہے کہ کون سا product sold out ہے، کس product کی demand ہے، کس product کو customer wishlist میں save کر رہا ہے، اور کہاں low stock urgency دکھانی ہے۔</p>
+<div class="section" id="sec-final">
+  <div class="section-header" onclick="toggle('sec-final')">
+    <div class="section-num" style="background:linear-gradient(135deg,#00b894,#fdcb6e)">8</div>
+    <h2>Final delivery package<small>Share the QA URL, Loom link, and issue notes</small></h2>
+    <span class="section-badge" id="badge-sec-final">0/1</span>
+    <span class="section-chevron">&#9662;</span>
+  </div>
+  <div class="section-body">
+    <div class="intro-text">When QA is done, send the working GitHub QA URL, Loom video, and any issue list with screenshots or timestamps.</div>
+    <div class="task" data-section="sec-final">
+      <input type="checkbox" class="task-check" onchange="updateProgress()">
+      <div class="task-content">
+        <div class="task-title">Send final QA package today</div>
+        <ul class="steps">
+          <li class="step"><span class="step-num">1</span><span>Share this QA URL: <strong>mohmmadmuneeb.github.io/notifystock</strong>.</span></li>
+          <li class="step"><span class="step-num">2</span><span>Share Loom URL in Urdu.</span></li>
+          <li class="step"><span class="step-num">3</span><span>Share copied report or PDF with any failed items clearly listed.</span></li>
+        </ul>
+        <div class="verdict"><button class="v-pass" onclick="setVerdict(this,'pass')">Pass</button><button class="v-fail" onclick="setVerdict(this,'fail')">Fail</button><button class="v-skip" onclick="setVerdict(this,'skip')">Skip</button></div>
+      </div>
+    </div>
+  </div>
+</div>
 
-          <h3>Homepage - 45 seconds</h3>
-          <p class="urdu">سب سے پہلے ہم homepage کھولتے ہیں۔ یہاں ہمیں فوراً سمجھ آنا چاہیے کہ app کیا کرتی ہے۔ Heading، Start free button، Live demo button، product images، اور navigation صاف نظر آنی چاہیے۔ اگر پانچویں class کا بچہ بھی دیکھے تو اسے سمجھ آ جائے کہ یہ product demand capture کرنے والی Shopify app ہے۔</p>
+<div class="results-card" id="resultsBox">
+  <h2>Today's Results</h2>
+  <div id="resultsList"></div>
+  <div class="btn-group">
+    <button class="btn btn-copy" onclick="copyResults()">Copy to Clipboard</button>
+    <button class="btn btn-pdf" onclick="downloadPDF()">Download PDF</button>
+  </div>
+</div>
 
-          <h3>Four products - 2 minutes</h3>
-          <p class="urdu">اب ہم چار main products دیکھتے ہیں۔ Back in Stock کا مطلب ہے customer sold-out product کے لیے alert مانگتا ہے۔ PreOrder کا مطلب ہے product launch سے پہلے interest یا reservation لینا۔ Wishlist کا مطلب ہے customer product save کرتا ہے۔ Low Stock کا مطلب ہے inventory کم ہو تو urgency message دکھانا۔</p>
+<div style="margin-top:20px;">
+  <button class="btn btn-pdf" style="width:100%" onclick="downloadPDF()">Download PDF Report</button>
+</div>
 
-          <h3>Demo store - 1 minute</h3>
-          <p class="urdu">اب Live demo open کریں۔ Password ہے oowoff۔ Demo store پر product page کھول کر widget دیکھیں۔ یہاں customer action simple ہونا چاہیے: notify me, preorder, wishlist, یا low stock message۔</p>
+<button class="btn btn-reset" onclick="resetAll()">Reset All for Tomorrow</button>
 
-          <h3>Pricing - 45 seconds</h3>
-          <p class="urdu">Pricing page پر plans صاف ہونے چاہئیں۔ Free plan available ہے، paid plans پر seven-day trial ہے، اور SMS/push کے لیے provider setup کی بات clear ہونی چاہیے۔ کوئی fake unlimited claim نہیں ہونا چاہیے۔</p>
+<div class="footer">NotifyStock QA System &middot; Updated daily</div>
 
-          <h3>AI assistant - 45 seconds</h3>
-          <p class="urdu">اب bottom-right AI assistant کھولتے ہیں۔ Question لکھیں: Does NotifyStock support preorder and wishlist? Assistant کو proper answer دینا چاہیے، raw markdown نہیں دکھانا چاہیے، اور box میں unnecessary blank space نہیں ہونی چاہیے۔</p>
+<script>
+  const now = new Date();
+  const dateOpts = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  const dateStr = now.toLocaleDateString('en-US', dateOpts);
+  document.getElementById('dateBar').textContent = dateStr;
+  const storageKey = 'notifystock-qa-' + now.toISOString().slice(0, 10);
+  const ALL_SECTIONS = ['sec-website','sec-storefront','sec-admin','sec-e2e','sec-ai','sec-mobile','sec-loom','sec-final'];
+  const SECTION_GROUPS = [
+    { name: 'Public Website', color: [17,17,17], start: 0, end: 4 },
+    { name: 'Demo Storefront', color: [0,184,148], start: 4, end: 7 },
+    { name: 'Shopify Admin App', color: [9,132,227], start: 7, end: 11 },
+    { name: 'E2E Flow', color: [253,203,110], start: 11, end: 13 },
+    { name: 'AI Assistant', color: [225,112,85], start: 13, end: 15 },
+    { name: 'Mobile QA', color: [162,155,254], start: 15, end: 17 },
+    { name: 'Urdu Loom', color: [99,110,114], start: 17, end: 19 },
+    { name: 'Final Delivery', color: [0,184,148], start: 19, end: 20 },
+  ];
 
-          <h3>Contact - 30 seconds</h3>
-          <p class="urdu">Contact page پر form visible ہونا چاہیے۔ Buyer یا merchant آسانی سے demo یا help request کر سکے۔ support email بھی visible ہے۔</p>
-
-          <h3>Admin app - 1 minute</h3>
-          <p class="urdu">Shopify admin میں app open کر کے dashboard، Back in Stock, PreOrder, Wishlist, Low Stock, Templates, Analytics, اور AI Assistant دیکھیں۔ Private passwords یا customer data Loom میں show نہ کریں۔</p>
-
-          <h3>Closing - 20 seconds</h3>
-          <p class="urdu">یہ QA اس لیے ہے کہ ہم confirm کر سکیں website, demo store, AI assistant, pricing, contact form, اور main Shopify features correctly work کر رہے ہیں۔ اگر کوئی issue ملے تو screenshot یا Loom timestamp کے ساتھ note کریں۔</p>
-        </div>
-      </section>
-
-      <section>
-        <div class="section-head">
-          <h2>Final pass checklist</h2>
-          <p class="note">Before sharing the Loom, tick these items.</p>
-        </div>
-        <div class="grid cols-2">
-          <div class="card dark"><h3>Must pass</h3><p>All main links open. No 404. No broken images. No mobile overlap. AI assistant answers. Contact form visible. Demo password works. Shopify admin E2E checklist reviewed.</p></div>
-          <div class="card"><h3>Do not show</h3><p>Do not show private Shopify credentials, API keys, database data, customer data, or admin passwords in Loom.</p></div>
-          <div class="card"><h3>What to send</h3><p>Share this QA URL, Loom video URL, and any issue list with screenshot or timestamp.</p></div>
-          <div class="card"><h3>Today's target</h3><p>QA guide ready, Loom recorded in Urdu, important features explained simply.</p></div>
-        </div>
-        <p class="tiny">Generated for NotifyStock QA. Last updated: 28 July 2026.</p>
-      </section>
-    </main>
-  </body>
+  function loadState() {
+    try {
+      const s = JSON.parse(localStorage.getItem(storageKey) || '{}');
+      const cbs = document.querySelectorAll('.task-check');
+      cbs.forEach((cb, i) => {
+        if (s.checks && s.checks[i]) { cb.checked = true; cb.closest('.task').classList.add('checked'); }
+      });
+      if (s.verdicts) {
+        document.querySelectorAll('.verdict').forEach((v, i) => {
+          if (s.verdicts[i]) {
+            const btn = v.querySelector('.v-' + s.verdicts[i]);
+            if (btn) btn.classList.add('active');
+          }
+        });
+      }
+      updateProgress();
+    } catch(e) {}
+  }
+  function saveState() {
+    const checks = []; const verdicts = [];
+    document.querySelectorAll('.task-check').forEach(cb => checks.push(cb.checked));
+    document.querySelectorAll('.verdict').forEach(v => {
+      if (v.querySelector('.v-pass.active')) verdicts.push('pass');
+      else if (v.querySelector('.v-fail.active')) verdicts.push('fail');
+      else if (v.querySelector('.v-skip.active')) verdicts.push('skip');
+      else verdicts.push(null);
+    });
+    localStorage.setItem(storageKey, JSON.stringify({ checks, verdicts }));
+  }
+  function updateProgress() {
+    const all = document.querySelectorAll('.task-check');
+    const checked = document.querySelectorAll('.task-check:checked');
+    const pct = all.length ? Math.round((checked.length / all.length) * 100) : 0;
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('progressPct').textContent = pct + '%';
+    document.getElementById('statPass').textContent = document.querySelectorAll('.v-pass.active').length;
+    document.getElementById('statFail').textContent = document.querySelectorAll('.v-fail.active').length;
+    document.getElementById('statSkip').textContent = document.querySelectorAll('.v-skip.active').length;
+    ALL_SECTIONS.forEach(sec => {
+      const t = document.querySelectorAll('#' + sec + ' .task-check');
+      const d = document.querySelectorAll('#' + sec + ' .task-check:checked');
+      const badge = document.getElementById('badge-' + sec);
+      if (badge) {
+        badge.textContent = d.length + '/' + t.length;
+        badge.classList.toggle('done', d.length === t.length && t.length > 0);
+      }
+    });
+    all.forEach(cb => cb.closest('.task').classList.toggle('checked', cb.checked));
+    saveState();
+    updateResults();
+  }
+  function setVerdict(btn, type) {
+    const v = btn.closest('.verdict');
+    v.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cb = btn.closest('.task').querySelector('.task-check');
+    if (cb && !cb.checked) cb.checked = true;
+    updateProgress();
+  }
+  function toggle(id) { document.getElementById(id).classList.toggle('collapsed'); }
+  function getTaskResults() {
+    const results = [];
+    document.querySelectorAll('.task').forEach(task => {
+      const title = task.querySelector('.task-title')?.textContent || '';
+      const v = task.querySelector('.verdict');
+      let status = 'NOT TESTED';
+      if (v) {
+        if (v.querySelector('.v-pass.active')) status = 'PASS';
+        else if (v.querySelector('.v-fail.active')) status = 'FAIL';
+        else if (v.querySelector('.v-skip.active')) status = 'SKIP';
+      }
+      results.push({ title, status });
+    });
+    return results;
+  }
+  function updateResults() {
+    const results = getTaskResults();
+    const tested = results.filter(r => r.status !== 'NOT TESTED');
+    const box = document.getElementById('resultsBox');
+    if (tested.length === 0) { box.style.display = 'none'; return; }
+    box.style.display = 'block';
+    let html = '';
+    results.forEach(r => {
+      const cls = r.status === 'PASS' ? 'rs-pass' : r.status === 'FAIL' ? 'rs-fail' : r.status === 'SKIP' ? 'rs-skip' : 'rs-none';
+      const icon = r.status === 'PASS' ? '&#9989;' : r.status === 'FAIL' ? '&#10060;' : r.status === 'SKIP' ? '&#9898;' : '&#11036;';
+      html += '<div class="result-row"><span class="result-icon">' + icon + '</span><span class="result-title">' + r.title + '</span><span class="result-status ' + cls + '">' + r.status + '</span></div>';
+    });
+    document.getElementById('resultsList').innerHTML = html;
+  }
+  function copyResults() {
+    const results = getTaskResults();
+    const passes = results.filter(r => r.status === 'PASS').length;
+    const fails = results.filter(r => r.status === 'FAIL').length;
+    const skips = results.filter(r => r.status === 'SKIP').length;
+    let text = 'NotifyStock QA Report - ' + dateStr + '\n' + '='.repeat(40) + '\n\n';
+    results.forEach(r => {
+      const icon = r.status === 'PASS' ? '+' : r.status === 'FAIL' ? 'X' : r.status === 'SKIP' ? '-' : '?';
+      text += '[' + icon + '] ' + r.title + ' - ' + r.status + '\n';
+    });
+    text += '\nTotal: ' + passes + ' passed, ' + fails + ' failed, ' + skips + ' skipped\n';
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.querySelector('.btn-copy');
+      const orig = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = orig, 2000);
+    });
+  }
+  function downloadPDF() {
+    if (!window.jspdf) {
+      alert('PDF library is still loading. Please wait a moment and try again.');
+      return;
+    }
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    const results = getTaskResults();
+    const passes = results.filter(r => r.status === 'PASS').length;
+    const fails = results.filter(r => r.status === 'FAIL').length;
+    const skips = results.filter(r => r.status === 'SKIP').length;
+    const tested = results.filter(r => r.status !== 'NOT TESTED').length;
+    doc.setFillColor(17, 17, 17);
+    doc.rect(0, 0, 210, 45, 'F');
+    doc.setFillColor(15, 118, 110);
+    doc.circle(180, 10, 25, 'F');
+    doc.setFillColor(107, 114, 128);
+    doc.circle(30, 40, 15, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(24);
+    doc.setFont('helvetica', 'bold');
+    doc.text('NotifyStock QA Report', 105, 20, { align: 'center' });
+    doc.setFontSize(12);
+    doc.setFont('helvetica', 'normal');
+    doc.text(dateStr, 105, 32, { align: 'center' });
+    doc.setFontSize(10);
+    doc.text('Website, Shopify app, demo store, AI, and E2E checks', 105, 40, { align: 'center' });
+    let y = 55;
+    const boxW = 42, boxH = 22, startX = 14, gap = 4;
+    const summary = [
+      ['TESTED', tested, [238,240,248], [17,17,17]],
+      ['PASSED', passes, [230,249,240], [0,133,106]],
+      ['FAILED', fails, [253,232,228], [196,64,37]],
+      ['SKIPPED', skips, [240,240,245], [99,110,114]]
+    ];
+    summary.forEach((s, i) => {
+      const x = startX + i * (boxW + gap);
+      doc.setFillColor(...s[2]);
+      doc.roundedRect(x, y, boxW, boxH, 3, 3, 'F');
+      doc.setFontSize(16);
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(...s[3]);
+      doc.text(String(s[1]), x + boxW/2, y + 10, { align: 'center' });
+      doc.setFontSize(8);
+      doc.setTextColor(100, 100, 100);
+      doc.text(s[0], x + boxW/2, y + 17, { align: 'center' });
+    });
+    y += boxH + 15;
+    doc.setDrawColor(220, 220, 230);
+    doc.line(14, y, 196, y);
+    y += 10;
+    SECTION_GROUPS.forEach(sec => {
+      if (y > 260) { doc.addPage(); y = 20; }
+      doc.setFillColor(...sec.color);
+      doc.roundedRect(14, y - 4, 3, 14, 1, 1, 'F');
+      doc.setFontSize(12);
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(50, 50, 50);
+      doc.text(sec.name, 22, y + 5);
+      y += 14;
+      results.slice(sec.start, sec.end).forEach(t => {
+        if (y > 275) { doc.addPage(); y = 20; }
+        let badgeColor, textColor;
+        if (t.status === 'PASS') { badgeColor = [230,249,240]; textColor = [0,133,106]; }
+        else if (t.status === 'FAIL') { badgeColor = [253,232,228]; textColor = [196,64,37]; }
+        else if (t.status === 'SKIP') { badgeColor = [240,240,245]; textColor = [99,110,114]; }
+        else { badgeColor = [240,240,245]; textColor = [170,170,170]; }
+        doc.setFillColor(...badgeColor);
+        doc.roundedRect(22, y - 4, 22, 7, 2, 2, 'F');
+        doc.setFontSize(7);
+        doc.setFont('helvetica', 'bold');
+        doc.setTextColor(...textColor);
+        doc.text(t.status, 33, y + 1, { align: 'center' });
+        doc.setTextColor(60, 60, 60);
+        doc.setFontSize(9);
+        doc.setFont('helvetica', 'normal');
+        const titleLines = doc.splitTextToSize(t.title, 140);
+        doc.text(titleLines, 48, y + 1);
+        y += Math.max(8, titleLines.length * 5 + 3);
+      });
+      y += 4;
+    });
+    if (y > 265) { doc.addPage(); y = 20; }
+    y += 6;
+    doc.setDrawColor(220, 220, 230);
+    doc.line(14, y, 196, y);
+    y += 10;
+    doc.setFontSize(8);
+    doc.setTextColor(170, 170, 170);
+    doc.text('Generated from NotifyStock QA Checklist - mohmmadmuneeb.github.io/notifystock', 105, y, { align: 'center' });
+    doc.save('NotifyStock-QA-' + now.toISOString().slice(0, 10) + '.pdf');
+    const btn = document.querySelector('.btn-pdf');
+    if (btn) {
+      const orig = btn.textContent;
+      btn.textContent = 'Downloaded!';
+      setTimeout(() => btn.textContent = orig, 2000);
+    }
+  }
+  function resetAll() {
+    if (!confirm('Reset everything for a fresh start tomorrow?')) return;
+    localStorage.removeItem(storageKey);
+    document.querySelectorAll('.task-check').forEach(cb => { cb.checked = false; });
+    document.querySelectorAll('.verdict button').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.task').forEach(t => t.classList.remove('checked'));
+    updateProgress();
+  }
+  loadState();
+</script>
+</body>
 </html>
