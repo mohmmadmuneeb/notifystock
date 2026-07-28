@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NotifyStock QA Testing Guide</title>
+    <meta name="description" content="Simple QA testing guide for NotifyStock public website, Shopify app features, demo flow, AI assistant, pricing, contact form, and Loom walkthrough.">
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+      :root {
+        --ink: #0d0d0d;
+        --muted: #5d5d5d;
+        --line: #dedbd5;
+        --soft: #f7f5ef;
+        --paper: #ffffff;
+        --dark: #111111;
+        --green: #0b6b4f;
+        --amber: #b75f00;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--soft);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.5;
+        margin: 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration-thickness: 0.08em;
+        text-underline-offset: 0.2em;
+      }
+
+      .wrap {
+        margin: 0 auto;
+        max-width: 1180px;
+        padding: 28px;
+      }
+
+      .hero {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        display: grid;
+        gap: 28px;
+        grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+        overflow: hidden;
+        padding: 32px;
+      }
+
+      .brand {
+        align-items: center;
+        display: flex;
+        gap: 12px;
+        margin-bottom: 42px;
+      }
+
+      .brand img {
+        border-radius: 9px;
+        height: 38px;
+        width: 38px;
+      }
+
+      .brand strong {
+        font-size: 25px;
+        letter-spacing: -0.02em;
+      }
+
+      h1 {
+        font-size: clamp(42px, 7vw, 78px);
+        letter-spacing: -0.045em;
+        line-height: 0.98;
+        margin: 0 0 18px;
+        max-width: 780px;
+      }
+
+      .lead {
+        color: #333333;
+        font-size: 19px;
+        max-width: 660px;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 26px;
+      }
+
+      .button {
+        align-items: center;
+        border: 1px solid var(--dark);
+        border-radius: 8px;
+        display: inline-flex;
+        font-weight: 700;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 18px;
+        text-decoration: none;
+      }
+
+      .button.primary {
+        background: var(--dark);
+        color: #ffffff;
+      }
+
+      .hero-card {
+        align-self: stretch;
+        background: #151515;
+        border-radius: 14px;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 420px;
+        overflow: hidden;
+      }
+
+      .hero-card img {
+        display: block;
+        height: 275px;
+        object-fit: cover;
+        opacity: 0.82;
+        width: 100%;
+      }
+
+      .hero-card div {
+        padding: 22px;
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 22px 0 0;
+      }
+
+      .pill {
+        background: #efede6;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: #333333;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 8px 11px;
+      }
+
+      section {
+        margin-top: 24px;
+      }
+
+      .section-head {
+        align-items: end;
+        display: flex;
+        gap: 18px;
+        justify-content: space-between;
+        margin-bottom: 12px;
+      }
+
+      h2 {
+        font-size: clamp(28px, 4vw, 46px);
+        letter-spacing: -0.035em;
+        line-height: 1;
+        margin: 0;
+      }
+
+      .note {
+        color: var(--muted);
+        font-size: 14px;
+        margin: 0;
+        max-width: 470px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 12px;
+      }
+
+      .grid.cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid.cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .grid.cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .card {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 18px;
+      }
+
+      .card.dark {
+        background: #111111;
+        border-color: #111111;
+        color: #ffffff;
+      }
+
+      .card h3 {
+        font-size: 20px;
+        letter-spacing: -0.015em;
+        margin: 0 0 8px;
+      }
+
+      .card p {
+        color: var(--muted);
+        margin: 0;
+      }
+
+      .card.dark p {
+        color: rgba(255, 255, 255, 0.74);
+      }
+
+      .status {
+        color: var(--green);
+        font-weight: 800;
+      }
+
+      .warn {
+        color: var(--amber);
+        font-weight: 800;
+      }
+
+      table {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-collapse: separate;
+        border-radius: 12px;
+        border-spacing: 0;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      th,
+      td {
+        border-bottom: 1px solid var(--line);
+        padding: 14px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: #f0eee7;
+        font-size: 13px;
+        text-transform: uppercase;
+      }
+
+      tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .script {
+        background: #111111;
+        border-radius: 14px;
+        color: #ffffff;
+        padding: 22px;
+      }
+
+      .script h3 {
+        color: #ffffff;
+        margin-top: 0;
+      }
+
+      .script p,
+      .script li {
+        color: rgba(255, 255, 255, 0.84);
+      }
+
+      .urdu {
+        direction: rtl;
+        font-size: 17px;
+        text-align: right;
+      }
+
+      .tiny {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      @media (max-width: 840px) {
+        .wrap {
+          padding: 14px;
+        }
+
+        .hero {
+          grid-template-columns: 1fr;
+          padding: 22px;
+        }
+
+        .brand {
+          margin-bottom: 26px;
+        }
+
+        .hero-card {
+          min-height: 0;
+        }
+
+        .grid.cols-2,
+        .grid.cols-3,
+        .grid.cols-4 {
+          grid-template-columns: 1fr;
+        }
+
+        .section-head {
+          align-items: start;
+          flex-direction: column;
+        }
+
+        table {
+          display: block;
+          overflow-x: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="hero">
+        <div>
+          <div class="brand">
+            <img src="https://notifystock.com/notify-assets/notifystock-favicon.png" alt="NotifyStock app icon">
+            <strong>notifystock QA</strong>
+          </div>
+          <h1>Simple QA testing guide for NotifyStock</h1>
+          <p class="lead">Use this page to test the live website, demo store, AI assistant, product pages, pricing, contact form, and main Shopify app features. It is written in easy words, like explaining to a 5th grade student.</p>
+          <div class="actions">
+            <a class="button primary" href="https://notifystock.com/" target="_blank" rel="noreferrer">Open live website</a>
+            <a class="button" href="https://notifystock-demo.myshopify.com/password?return_url=%2Fproducts%2Fthe-out-of-stock-snowboard" target="_blank" rel="noreferrer">Open demo store</a>
+            <a class="button" href="#loom-script">Urdu Loom script</a>
+          </div>
+          <div class="pill-row">
+            <span class="pill">Demo password: oowoff</span>
+            <span class="pill">Shopify App Store approved</span>
+            <span class="pill">4 workflows</span>
+            <span class="pill">AI assistant live</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img src="https://notifystock.com/notify-assets/hero-back-in-stock.webp" alt="NotifyStock Back in Stock storefront screenshot">
+          <div>
+            <h2>What we are testing</h2>
+            <p>Back in Stock, PreOrder, Wishlist, Low Stock, notifications, analytics, pricing, contact form, mobile view, and the public AI assistant.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>Quick status</h2>
+          <p class="note">This guide points to the live production website. Use it as the checklist during manual QA and Loom recording.</p>
+        </div>
+        <div class="grid cols-4">
+          <div class="card"><h3>Website</h3><p><span class="status">Live:</span> <a href="https://notifystock.com/" target="_blank" rel="noreferrer">notifystock.com</a></p></div>
+          <div class="card"><h3>Demo store</h3><p><span class="status">Password:</span> oowoff</p></div>
+          <div class="card"><h3>CTA</h3><p><span class="status">Start free</span> opens Shopify App Store listing.</p></div>
+          <div class="card"><h3>AI assistant</h3><p><span class="status">Live</span> on public website bottom-right.</p></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>Main test links</h2>
+          <p class="note">Open each link, look at desktop and mobile, then tick the expected result.</p>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Page / feature</th>
+              <th>Open this</th>
+              <th>Check this like a child</th>
+              <th>Expected result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Homepage</td>
+              <td><a href="https://notifystock.com/" target="_blank" rel="noreferrer">notifystock.com</a></td>
+              <td>Can I understand in 10 seconds what this app does?</td>
+              <td>Shows all-in-one Shopify demand app, Start free, Live demo, product visuals.</td>
+            </tr>
+            <tr>
+              <td>Navigation</td>
+              <td><a href="https://notifystock.com/" target="_blank" rel="noreferrer">Header menu</a></td>
+              <td>Click Product, Features, Integrations, Resources, Pricing.</td>
+              <td>Menus open smoothly, links work, mobile hamburger works.</td>
+            </tr>
+            <tr>
+              <td>Back in Stock</td>
+              <td><a href="https://notifystock.com/back-in-stock/" target="_blank" rel="noreferrer">Back in Stock page</a></td>
+              <td>Does this explain sold-out product requests?</td>
+              <td>Relevant screenshots, workflow copy, FAQ, and CTA.</td>
+            </tr>
+            <tr>
+              <td>PreOrder</td>
+              <td><a href="https://notifystock.com/preorder/" target="_blank" rel="noreferrer">PreOrder page</a></td>
+              <td>Does this explain launching or reserving products early?</td>
+              <td>PreOrder-specific screenshots and copy.</td>
+            </tr>
+            <tr>
+              <td>Wishlist</td>
+              <td><a href="https://notifystock.com/wishlist/" target="_blank" rel="noreferrer">Wishlist page</a></td>
+              <td>Does this explain saving products for later?</td>
+              <td>Wishlist-specific screenshots and copy.</td>
+            </tr>
+            <tr>
+              <td>Low Stock</td>
+              <td><a href="https://notifystock.com/low-stock/" target="_blank" rel="noreferrer">Low Stock page</a></td>
+              <td>Does this explain urgency when inventory is low?</td>
+              <td>Low-stock counter/threshold story is clear.</td>
+            </tr>
+            <tr>
+              <td>Pricing</td>
+              <td><a href="https://notifystock.com/pricing/" target="_blank" rel="noreferrer">Pricing page</a></td>
+              <td>Are plan prices, Annual/Monthly, limits, and trial clear?</td>
+              <td>No fake unlimited claims. Seven-day trial is clear.</td>
+            </tr>
+            <tr>
+              <td>Contact form</td>
+              <td><a href="https://notifystock.com/contact/" target="_blank" rel="noreferrer">Contact page</a></td>
+              <td>Can a person request help easily?</td>
+              <td>Form is visible. Email support@notifystock.com is visible.</td>
+            </tr>
+            <tr>
+              <td>AI assistant</td>
+              <td><a href="https://notifystock.com/" target="_blank" rel="noreferrer">Bottom-right chat icon</a></td>
+              <td>Ask: "Does NotifyStock support preorder and wishlist?"</td>
+              <td>Assistant opens, answers, no raw **markdown**, no huge blank space.</td>
+            </tr>
+            <tr>
+              <td>Demo store</td>
+              <td><a href="https://notifystock-demo.myshopify.com/password?return_url=%2Fproducts%2Fthe-out-of-stock-snowboard" target="_blank" rel="noreferrer">Live demo store</a></td>
+              <td>Enter password oowoff and test storefront widget.</td>
+              <td>Store opens and product workflow can be shown in Loom.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>Important feature checklist</h2>
+          <p class="note">These are the core app features to show in the QA video.</p>
+        </div>
+        <div class="grid cols-3">
+          <div class="card"><h3>1. Back in Stock</h3><p>Sold-out shoppers can request a restock alert. Admin can see demand.</p></div>
+          <div class="card"><h3>2. PreOrder</h3><p>Merchant can collect interest or reservations before product is fully available.</p></div>
+          <div class="card"><h3>3. Wishlist</h3><p>Shopper can save a product. Merchant can see saved product interest.</p></div>
+          <div class="card"><h3>4. Low Stock</h3><p>Store can show urgency when inventory is close to low threshold.</p></div>
+          <div class="card"><h3>Notifications</h3><p>Email is included. SMS/push depends on provider setup like Twilio or OneSignal.</p></div>
+          <div class="card"><h3>Analytics</h3><p>Merchant can understand product demand, saved items, requests, and trends.</p></div>
+          <div class="card"><h3>Theme setup</h3><p>Use Shopify Theme Editor blocks. No manual theme-code edits should be required.</p></div>
+          <div class="card"><h3>Customization</h3><p>Merchant can adjust labels, colors, forms, templates, and product modes.</p></div>
+          <div class="card"><h3>Pricing/billing</h3><p>Free plan, paid plans, Annual/Monthly, and Shopify billing must be clear.</p></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>Mobile QA</h2>
+          <p class="note">Most buyers check from mobile. Do not skip this.</p>
+        </div>
+        <div class="grid cols-2">
+          <div class="card">
+            <h3>Mobile website</h3>
+            <p>Open homepage on phone size. Header logo, hamburger, hero text, Start free, Live demo, screenshots, and AI assistant must not overlap.</p>
+          </div>
+          <div class="card">
+            <h3>Mobile menus</h3>
+            <p>Tap hamburger. Product, Features, Integrations, Resources, Pricing, and CTA links should be easy to read and tap.</p>
+          </div>
+          <div class="card">
+            <h3>Mobile AI assistant</h3>
+            <p>Open assistant. It should look compact, answer questions, and not hide the screen with broken blank space.</p>
+          </div>
+          <div class="card">
+            <h3>Mobile demo store</h3>
+            <p>Open the demo store with password oowoff. Product page and widget should fit without sideways scrolling.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>Admin app QA</h2>
+          <p class="note">These checks need Shopify admin login. Do not put private passwords in Loom.</p>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Admin area</th>
+              <th>What to show</th>
+              <th>Expected result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Dashboard</td><td>Open NotifyStock app in Shopify admin.</td><td>Dashboard loads without errors.</td></tr>
+            <tr><td>Back in Stock</td><td>Open products/configuration/requests.</td><td>Workflow is clear and data is readable.</td></tr>
+            <tr><td>PreOrder</td><td>Open configurations/offers/orders.</td><td>PreOrder settings and records are visible.</td></tr>
+            <tr><td>Wishlist</td><td>Open wishlist lists/products/orders.</td><td>Wishlist activity is visible.</td></tr>
+            <tr><td>Low Stock</td><td>Open low-stock configuration.</td><td>Threshold and widget settings are understandable.</td></tr>
+            <tr><td>Templates</td><td>Open notification templates.</td><td>Workflow-specific message templates are clear.</td></tr>
+            <tr><td>AI Assistant</td><td>Open admin assistant and ask a setup question.</td><td>Assistant answers from NotifyStock context.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="loom-script">
+        <div class="section-head">
+          <h2>Urdu Loom video script</h2>
+          <p class="note">Record this in Loom. Speak slowly and explain like the viewer is in 5th grade.</p>
+        </div>
+        <div class="script">
+          <h3>Video title</h3>
+          <p>NotifyStock QA Testing Walkthrough - Simple Urdu Explanation</p>
+
+          <h3>Opening - 20 seconds</h3>
+          <p class="urdu">السلام علیکم، آج میں NotifyStock کی QA testing دکھا رہا ہوں۔ آسان الفاظ میں، یہ Shopify app دکان والوں کو بتاتی ہے کہ کون سا product sold out ہے، کس product کی demand ہے، کس product کو customer wishlist میں save کر رہا ہے، اور کہاں low stock urgency دکھانی ہے۔</p>
+
+          <h3>Homepage - 45 seconds</h3>
+          <p class="urdu">سب سے پہلے ہم homepage کھولتے ہیں۔ یہاں ہمیں فوراً سمجھ آنا چاہیے کہ app کیا کرتی ہے۔ Heading، Start free button، Live demo button، product images، اور navigation صاف نظر آنی چاہیے۔ اگر پانچویں class کا بچہ بھی دیکھے تو اسے سمجھ آ جائے کہ یہ product demand capture کرنے والی Shopify app ہے۔</p>
+
+          <h3>Four products - 2 minutes</h3>
+          <p class="urdu">اب ہم چار main products دیکھتے ہیں۔ Back in Stock کا مطلب ہے customer sold-out product کے لیے alert مانگتا ہے۔ PreOrder کا مطلب ہے product launch سے پہلے interest یا reservation لینا۔ Wishlist کا مطلب ہے customer product save کرتا ہے۔ Low Stock کا مطلب ہے inventory کم ہو تو urgency message دکھانا۔</p>
+
+          <h3>Demo store - 1 minute</h3>
+          <p class="urdu">اب Live demo open کریں۔ Password ہے oowoff۔ Demo store پر product page کھول کر widget دیکھیں۔ یہاں customer action simple ہونا چاہیے: notify me, preorder, wishlist, یا low stock message۔</p>
+
+          <h3>Pricing - 45 seconds</h3>
+          <p class="urdu">Pricing page پر plans صاف ہونے چاہئیں۔ Free plan available ہے، paid plans پر seven-day trial ہے، اور SMS/push کے لیے provider setup کی بات clear ہونی چاہیے۔ کوئی fake unlimited claim نہیں ہونا چاہیے۔</p>
+
+          <h3>AI assistant - 45 seconds</h3>
+          <p class="urdu">اب bottom-right AI assistant کھولتے ہیں۔ Question لکھیں: Does NotifyStock support preorder and wishlist? Assistant کو proper answer دینا چاہیے، raw markdown نہیں دکھانا چاہیے، اور box میں unnecessary blank space نہیں ہونی چاہیے۔</p>
+
+          <h3>Contact - 30 seconds</h3>
+          <p class="urdu">Contact page پر form visible ہونا چاہیے۔ Buyer یا merchant آسانی سے demo یا help request کر سکے۔ support email بھی visible ہے۔</p>
+
+          <h3>Admin app - 1 minute</h3>
+          <p class="urdu">Shopify admin میں app open کر کے dashboard، Back in Stock, PreOrder, Wishlist, Low Stock, Templates, Analytics, اور AI Assistant دیکھیں۔ Private passwords یا customer data Loom میں show نہ کریں۔</p>
+
+          <h3>Closing - 20 seconds</h3>
+          <p class="urdu">یہ QA اس لیے ہے کہ ہم confirm کر سکیں website, demo store, AI assistant, pricing, contact form, اور main Shopify features correctly work کر رہے ہیں۔ اگر کوئی issue ملے تو screenshot یا Loom timestamp کے ساتھ note کریں۔</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>Final pass checklist</h2>
+          <p class="note">Before sharing the Loom, tick these items.</p>
+        </div>
+        <div class="grid cols-2">
+          <div class="card dark"><h3>Must pass</h3><p>All main links open. No 404. No broken images. No mobile overlap. AI assistant answers. Contact form visible. Demo password works.</p></div>
+          <div class="card"><h3>Do not show</h3><p>Do not show private Shopify credentials, API keys, database data, customer data, or admin passwords in Loom.</p></div>
+          <div class="card"><h3>What to send</h3><p>Share this QA URL, Loom video URL, and any issue list with screenshot or timestamp.</p></div>
+          <div class="card"><h3>Today's target</h3><p>QA guide ready, Loom recorded in Urdu, important features explained simply.</p></div>
+        </div>
+        <p class="tiny">Generated for NotifyStock QA. Last updated: 28 July 2026.</p>
+      </section>
+    </main>
+  </body>
+</html>
